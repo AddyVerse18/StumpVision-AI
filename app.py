@@ -430,6 +430,16 @@ warm_cache()
 if "master_del_select" not in st.session_state or st.session_state["master_del_select"] not in all_match_del_ids:
     st.session_state["master_del_select"] = all_match_del_ids[0]
 
+def set_delivery(idx: int):
+    st.session_state["master_del_select"] = int(idx)
+    st.session_state["master_del_select_box"] = int(idx)
+
+# Sync state if user changed the selectbox directly
+if "master_del_select_box" in st.session_state and st.session_state["master_del_select_box"] in all_match_del_ids:
+    st.session_state["master_del_select"] = int(st.session_state["master_del_select_box"])
+else:
+    st.session_state["master_del_select_box"] = int(st.session_state["master_del_select"])
+
 curr_del_idx = int(st.session_state["master_del_select"])
 del_info = summary_df[summary_df["delivery_idx"] == curr_del_idx].iloc[0] if not summary_df.empty else None
 traj_record = next((t for t in trajectories_data if t["delivery_idx"] == curr_del_idx), None)
@@ -451,6 +461,9 @@ st.sidebar.markdown(
 if "active_nav" not in st.session_state:
     st.session_state["active_nav"] = "Analysis"
 
+def set_nav(nav_key: str):
+    st.session_state["active_nav"] = nav_key
+
 sidebar_menu_items = [
     ("Analysis", "📈", "Analysis"),
     ("Pitch Map", "🗺️", "Pitch Map"),
@@ -460,9 +473,14 @@ sidebar_menu_items = [
 for label, icon, nav_key in sidebar_menu_items:
     is_active = (st.session_state["active_nav"] == nav_key)
     btn_type = "primary" if is_active else "secondary"
-    if st.sidebar.button(f"{icon}  {label}", key=f"nav_btn_{nav_key}", type=btn_type, width="stretch"):
-        st.session_state["active_nav"] = nav_key
-        st.rerun()
+    st.sidebar.button(
+        f"{icon}  {label}",
+        key=f"nav_btn_{nav_key}",
+        type=btn_type,
+        width="stretch",
+        on_click=set_nav,
+        args=(nav_key,),
+    )
 
 st.sidebar.markdown("<br>", unsafe_allow_html=True)
 st.sidebar.markdown("---")
@@ -474,9 +492,14 @@ system_menu_items = [
 for label, icon, nav_key in system_menu_items:
     is_active = (st.session_state["active_nav"] == nav_key)
     btn_type = "primary" if is_active else "secondary"
-    if st.sidebar.button(f"{icon}  {label}", key=f"nav_btn_{nav_key}", type=btn_type, width="stretch"):
-        st.session_state["active_nav"] = nav_key
-        st.rerun()
+    st.sidebar.button(
+        f"{icon}  {label}",
+        key=f"nav_btn_{nav_key}",
+        type=btn_type,
+        width="stretch",
+        on_click=set_nav,
+        args=(nav_key,),
+    )
 
 # ---------------------------------------------------------------------------
 # Top Page Broadcast Header
@@ -566,14 +589,14 @@ elif st.session_state["active_nav"] == "Analysis":
                 is_curr = (curr_del_idx == d_idx)
                 t_cand = float(r["candidate_time_s"])
                 btn_type = "primary" if is_curr else "secondary"
-                if b_cols[i].button(
+                b_cols[i].button(
                     f"🎯 Ball {i+1} ({t_cand:.1f}s)",
                     key=f"clip_ball_btn_{d_idx}",
                     type=btn_type,
                     width="stretch",
-                ):
-                    st.session_state["master_del_select"] = d_idx
-                    st.rerun()
+                    on_click=set_delivery,
+                    args=(d_idx,),
+                )
 
         tab_ai, tab_raw = st.tabs([
             "🎯 AI Trajectory Replay (60 FPS)",
@@ -686,9 +709,13 @@ elif st.session_state["active_nav"] == "Analysis":
 
         sc_col1, sc_col2, sc_col3 = st.columns([1.1, 2.6, 1.1])
         with sc_col1:
-            if st.button(f"◀ Ball #{prev_id}", key="tl_prev_btn", width="stretch"):
-                st.session_state["master_del_select"] = prev_id
-                st.rerun()
+            st.button(
+                f"◀ Ball #{prev_id}",
+                key="tl_prev_btn",
+                width="stretch",
+                on_click=set_delivery,
+                args=(prev_id,),
+            )
 
         with sc_col2:
             len_title = str(del_info["length"]).replace("_", " ").title() if del_info is not None else "Good Length"
@@ -705,9 +732,13 @@ elif st.session_state["active_nav"] == "Analysis":
             )
 
         with sc_col3:
-            if st.button(f"Ball #{next_id} ▶", key="tl_next_btn", width="stretch"):
-                st.session_state["master_del_select"] = next_id
-                st.rerun()
+            st.button(
+                f"Ball #{next_id} ▶",
+                key="tl_next_btn",
+                width="stretch",
+                on_click=set_delivery,
+                args=(next_id,),
+            )
 
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -722,7 +753,7 @@ elif st.session_state["active_nav"] == "Analysis":
         with ih_col1:
             st.markdown(f'<div class="sv-card-header">Delivery Insights</div>', unsafe_allow_html=True)
         with ih_col2:
-            new_sel = st.selectbox(
+            st.selectbox(
                 "Delivery Selector",
                 options=all_match_del_ids,
                 index=all_match_del_ids.index(curr_del_idx) if curr_del_idx in all_match_del_ids else 0,
@@ -730,9 +761,6 @@ elif st.session_state["active_nav"] == "Analysis":
                 key="master_del_select_box",
                 label_visibility="collapsed",
             )
-            if new_sel != curr_del_idx:
-                st.session_state["master_del_select"] = new_sel
-                st.rerun()
 
         # Two sub-columns: Left telemetry & Right Perspective Pitch Graphic
         ins_sub1, ins_sub2 = st.columns([1.1, 1.2])
