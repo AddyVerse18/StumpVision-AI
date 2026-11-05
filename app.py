@@ -352,6 +352,19 @@ st.markdown(
         display: none !important;
     }
 
+    /* Native Video Player Styling - Smooth, Rounded, Hardware-Accelerated */
+    div[data-testid="stVideo"] {
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        background: #000000 !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    }
+    div[data-testid="stVideo"] video {
+        border-radius: 12px !important;
+        max-height: 420px !important;
+        object-fit: contain !important;
+    }
+
     /* Streamlit Default Cleanup */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
@@ -362,9 +375,9 @@ st.markdown(
 )
 
 # ---------------------------------------------------------------------------
-# Data Loading & In-Memory Base64 Video Caching (Zero 404 Range Request Bug)
+# High-Performance Cached Data Loading & Fast Visualization Engines
 # ---------------------------------------------------------------------------
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def load_data(json_mtime: float = 0.0, csv_mtime: float = 0.0):
     trajectories = []
     if TRAJ_JSON_PATH.exists():
@@ -378,22 +391,13 @@ def load_data(json_mtime: float = 0.0, csv_mtime: float = 0.0):
     return trajectories, summary_df
 
 
-@st.cache_data
-def get_video_b64(file_path_str: str, file_mtime: float = 0.0) -> str:
-    p = Path(file_path_str)
-    if p.exists():
-        with open(p, "rb") as f:
-            return base64.b64encode(f.read()).decode("utf-8")
-    return ""
-
-
 trajectories_data, summary_df = load_data(
     json_mtime=TRAJ_JSON_PATH.stat().st_mtime if TRAJ_JSON_PATH.exists() else 0.0,
     csv_mtime=TRAJ_CSV_PATH.stat().st_mtime if TRAJ_CSV_PATH.exists() else 0.0,
 )
 
 
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def get_cached_pitch_heatmap(selected_delivery_idx: int, width: int = 720, height: int = 230):
     return draw_pitch_heatmap_diagram(
         summary_df=summary_df,
@@ -403,7 +407,7 @@ def get_cached_pitch_heatmap(selected_delivery_idx: int, width: int = 720, heigh
     )
 
 
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def get_cached_perspective_pitch(del_idx: int, width: int = 340, height: int = 250):
     d_row = summary_df[summary_df["delivery_idx"] == del_idx].iloc[0] if not summary_df.empty else None
     return draw_perspective_pitch_zone_diagram(
@@ -412,20 +416,83 @@ def get_cached_perspective_pitch(del_idx: int, width: int = 340, height: int = 2
         height=height,
     )
 
+
+@st.cache_data(show_spinner=False)
+def get_cached_beehive(del_idx: int, width: int = 860, height: int = 700):
+    return render_beehive_chart(
+        trajectories=trajectories_data,
+        selected_delivery_idx=del_idx,
+        width=width,
+        height=height,
+    )
+
+
+@st.cache_data(show_spinner=False)
+def get_cached_2d_pitch(del_idx: int, width: int = 700, height: int = 900):
+    return draw_2d_pitch_map(
+        summary_df=summary_df,
+        selected_delivery_idx=del_idx,
+        width=width,
+        height=height,
+    )
+
+
+@st.cache_data(show_spinner=False)
+def get_cached_bowlers_view_overlay(del_idx: int):
+    d_row = summary_df[summary_df["delivery_idx"] == del_idx].iloc[0] if not summary_df.empty else None
+    ref_clip_id = d_row["clip_id"] if d_row is not None else "20220102063650_000130"
+    ref_video_file = DATA_DIR / f"raw/cam1/{ref_clip_id}.mp4"
+    frame = None
+    if ref_video_file.exists():
+        cap = cv2.VideoCapture(str(ref_video_file))
+        cap.set(cv2.CAP_PROP_POS_FRAMES, 300)
+        ret, frame = cap.read()
+        cap.release()
+        if not ret or frame is None:
+            frame = None
+
+    if frame is None:
+        demo_clip_file = PROJECT_ROOT / "outputs" / "trajectories" / "clips" / f"delivery_{del_idx:02d}_annotated.mp4"
+        if demo_clip_file.exists():
+            cap = cv2.VideoCapture(str(demo_clip_file))
+            ret, frame = cap.read()
+            cap.release()
+            if not ret or frame is None:
+                frame = None
+
+    if frame is None:
+        frame = np.ones((1080, 1920, 3), dtype=np.uint8) * 40
+
+    active_zone = str(d_row["length"]) if d_row is not None else None
+    pitch_annotated = render_pitch_zones_overlay(
+        frame,
+        alpha=0.38,
+        draw_labels=True,
+        draw_hud_cards=True,
+        active_zone_name=active_zone,
+    )
+
+    if d_row is not None and pd.notnull(d_row.get("bounce_x")) and pd.notnull(d_row.get("bounce_y")):
+        bx = int(round(d_row["bounce_x"]))
+        by = int(round(d_row["bounce_y"]))
+        cv2.circle(pitch_annotated, (bx, by), 16, (0, 255, 255), 3, cv2.LINE_AA)
+        cv2.circle(pitch_annotated, (bx, by), 8, (0, 165, 255), -1, cv2.LINE_AA)
+        cv2.putText(
+            pitch_annotated,
+            f"Ball #{del_idx} ({str(d_row['length']).upper()})",
+            (bx + 22, by + 5),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.60,
+            (0, 255, 255),
+            2,
+            cv2.LINE_AA,
+        )
+
+    return pitch_annotated
+
+
 # Available match deliveries
 all_match_del_ids = sorted(summary_df["delivery_idx"].astype(int).tolist()) if not summary_df.empty else [1]
-
-@st.cache_data
-def warm_cache():
-    for d in all_match_del_ids:
-        get_cached_perspective_pitch(d)
-        get_cached_pitch_heatmap(d)
-        clip_p = PROJECT_ROOT / "outputs" / "trajectories" / "clips" / f"delivery_{d:02d}_annotated.mp4"
-        if clip_p.exists():
-            get_video_b64(str(clip_p), file_mtime=clip_p.stat().st_mtime)
-    return True
-
-warm_cache()
 
 if "master_del_select" not in st.session_state or st.session_state["master_del_select"] not in all_match_del_ids:
     st.session_state["master_del_select"] = all_match_del_ids[0]
@@ -605,20 +672,8 @@ elif st.session_state["active_nav"] == "Analysis":
 
         with tab_ai:
             annotated_clip_file = PROJECT_ROOT / "outputs" / "trajectories" / "clips" / f"delivery_{curr_del_idx:02d}_annotated.mp4"
-            clip_mtime = annotated_clip_file.stat().st_mtime if annotated_clip_file.exists() else 0.0
-            b64_data = get_video_b64(str(annotated_clip_file), file_mtime=clip_mtime)
-            if b64_data:
-                st.markdown(
-                    f"""
-                    <div style="width: 100%; border-radius: 10px; overflow: hidden; background: #000; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
-                        <video id="stumpvision-vid-{curr_del_idx}-{int(clip_mtime)}" key="sv_vid_{curr_del_idx}_{int(clip_mtime)}" controls autoplay loop playsinline style="width: 100%; max-height: 410px; display: block; border-radius: 10px;">
-                            <source src="data:video/mp4;base64,{b64_data}" type="video/mp4">
-                            Your browser does not support HTML5 video.
-                        </video>
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
+            if annotated_clip_file.exists():
+                st.video(str(annotated_clip_file), autoplay=True, loop=True, width="stretch")
                 st.markdown(
                     f"""
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px; font-size: 0.82rem; color: #94a3b8; padding: 2px 4px;">
@@ -974,66 +1029,13 @@ elif st.session_state["active_nav"] == "Pitch Map":
     )
 
     if "Bowler's View" in p_mode:
-        ref_clip_id = del_info["clip_id"] if del_info is not None else "20220102063650_000130"
-        ref_video_file = DATA_DIR / f"raw/cam1/{ref_clip_id}.mp4"
-        frame = None
-        if ref_video_file.exists():
-            cap = cv2.VideoCapture(str(ref_video_file))
-            cap.set(cv2.CAP_PROP_POS_FRAMES, 300)
-            ret, frame = cap.read()
-            cap.release()
-            if not ret or frame is None:
-                frame = None
-
-        if frame is None:
-            # Fallback for Streamlit Cloud: extract clean background frame from tracked demo clip
-            demo_clip_file = PROJECT_ROOT / "outputs" / "trajectories" / "clips" / f"delivery_{curr_del_idx:02d}_annotated.mp4"
-            if demo_clip_file.exists():
-                cap = cv2.VideoCapture(str(demo_clip_file))
-                ret, frame = cap.read()
-                cap.release()
-                if not ret or frame is None:
-                    frame = None
-
-        if frame is None:
-            frame = np.ones((1080, 1920, 3), dtype=np.uint8) * 40
-
-        active_zone = str(del_info["length"]) if del_info is not None else None
-        pitch_annotated = render_pitch_zones_overlay(
-            frame,
-            alpha=0.38,
-            draw_labels=True,
-            draw_hud_cards=True,
-            active_zone_name=active_zone,
-        )
-
-        if del_info is not None and pd.notnull(del_info.get("bounce_x")) and pd.notnull(del_info.get("bounce_y")):
-            bx = int(round(del_info["bounce_x"]))
-            by = int(round(del_info["bounce_y"]))
-            cv2.circle(pitch_annotated, (bx, by), 16, (0, 255, 255), 3, cv2.LINE_AA)
-            cv2.circle(pitch_annotated, (bx, by), 8, (0, 165, 255), -1, cv2.LINE_AA)
-            cv2.putText(
-                pitch_annotated,
-                f"Ball #{curr_del_idx} ({str(del_info['length']).upper()})",
-                (bx + 22, by + 5),
-                cv2.FONT_HERSHEY_SIMPLEX,
-                0.60,
-                (0, 255, 255),
-                2,
-                cv2.LINE_AA,
-            )
-
+        pitch_annotated = get_cached_bowlers_view_overlay(curr_del_idx)
         st.image(pitch_annotated, channels="BGR", width="stretch")
 
     elif "Beehive" in p_mode:
         b_col1, b_col2 = st.columns([1.4, 0.6])
         with b_col1:
-            beehive_img = render_beehive_chart(
-                trajectories=trajectories_data,
-                selected_delivery_idx=curr_del_idx,
-                width=860,
-                height=700,
-            )
+            beehive_img = get_cached_beehive(curr_del_idx, width=860, height=700)
             st.image(beehive_img, channels="BGR", width="stretch")
         with b_col2:
             st.markdown("### 🎯 Delivery Telemetry")
@@ -1045,12 +1047,7 @@ elif st.session_state["active_nav"] == "Pitch Map":
             st.metric("DRS Virtual Decision", drs.decision)
 
     else:
-        pitch_img = draw_2d_pitch_map(
-            summary_df=summary_df,
-            selected_delivery_idx=curr_del_idx,
-            width=700,
-            height=900,
-        )
+        pitch_img = get_cached_2d_pitch(curr_del_idx, width=700, height=900)
         st.image(pitch_img, channels="BGR", width="stretch")
 
     st.markdown('</div>', unsafe_allow_html=True)

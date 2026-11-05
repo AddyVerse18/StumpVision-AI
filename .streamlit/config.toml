@@ -9,4 +9,13 @@ font = "sans serif"
 headless = true
 enableCORS = false
 enableXsrfProtection = false
+maxUploadSize = 500
+enableStaticServing = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = false
 
