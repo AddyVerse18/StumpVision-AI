@@ -688,11 +688,17 @@ elif st.session_state["active_nav"] == "Analysis":
 
         with tab_raw:
             raw_video_path = DATA_DIR / f"raw/cam1/{raw_clip_id}.mp4"
+            if not raw_video_path.exists():
+                raw_video_path = DATA_DIR / f"raw/cam1/{raw_clip_id}.MP4"
+
+            cloud_raw_path = PROJECT_ROOT / "outputs" / "raw_clips_demo" / f"{raw_clip_id}.mp4"
+            active_raw_path = raw_video_path if raw_video_path.exists() else cloud_raw_path
+
             cand_s = float(del_info["candidate_time_s"]) if del_info is not None and "candidate_time_s" in del_info else 0.0
             start_sec = max(0, int(round(cand_s)) - 2)
 
-            if raw_video_path.exists():
-                st.video(str(raw_video_path), start_time=start_sec, width="stretch")
+            if active_raw_path.exists():
+                st.video(str(active_raw_path), start_time=start_sec, width="stretch")
                 st.markdown(
                     f"""
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px; font-size: 0.82rem; color: #94a3b8; padding: 2px 4px;">
@@ -704,7 +710,7 @@ elif st.session_state["active_nav"] == "Analysis":
                 )
             else:
                 st.info(
-                    f"📹 **Uncompressed 1080p Match Footage ({raw_clip_id}.mp4)** is stored on local production NVMe storage (15 GB). "
+                    f"📹 **1-Min Match Footage ({raw_clip_id}.mp4)** is loading. "
                     f"Use the **'AI Hawk-Eye Tracking'** tab above to view the full computer-vision trajectory replay."
                 )
 
