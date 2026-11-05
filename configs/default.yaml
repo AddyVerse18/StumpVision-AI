@@ -1,0 +1,33 @@
+# StumpVision Default Configuration
+schema_version: "1.0"
+
+# External footage location (overridable via STUMPVISION_DATA_DIR environment variable)
+data_dir: "D:/Computer Vision Projects/StumpEye_Footage"
+
+# Manifest output location (contract: labels/manifest.csv)
+manifest_path: "labels/manifest.csv"
+
+# Camera subdirectories under raw/
+cameras:
+  - "cam1"
+  - "cam2"
+
+# Verification thresholds
+expected_fps: 60.0
+fps_tolerance: 0.05
+expected_width: 1920
+expected_height: 1080
+
+# M3 Classical Motion Detector Configuration
+m3_detector:
+  method_version: "m3_motion_baseline_v1"
+  downscale_width: 160
+  downscale_height: 90
+  noise_window_s: 5.0
+  mad_multiplier: 3.5
+  min_prominence: 1.5
+  min_separation_s: 3.5
+  min_score: 0.1
+
+logging:
+  level: "INFO"

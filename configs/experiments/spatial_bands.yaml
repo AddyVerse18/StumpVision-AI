@@ -1,0 +1,33 @@
+# StumpVision M3 Experiment Configuration: Vertical Spatial Bands Refinement
+schema_version: "1.0"
+
+# External footage location
+data_dir: "D:/Computer Vision Projects/StumpEye_Footage"
+
+manifest_path: "labels/manifest.csv"
+
+cameras:
+  - "cam1"
+  - "cam2"
+
+expected_fps: 60.0
+fps_tolerance: 0.05
+expected_width: 1920
+expected_height: 1080
+
+m3_detector:
+  method_version: "m3_spatial_bands_exp_v1"
+  downscale_width: 160
+  downscale_height: 90
+  noise_window_s: 5.0
+  mad_multiplier: 3.5
+  min_prominence: 1.5
+  min_separation_s: 3.5
+  min_score: 0.1
+  spatial_filtering: true
+  foreground_ratio_thresh: 1.0
+  spatial_penalty_alpha: 1.0
+
+logging:
+  level: "INFO"
+

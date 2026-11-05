@@ -1,0 +1,15 @@
+clip_id,time_s,score,status,method_version
+20220102063650_000130,32.6930,0.6813,candidate,baseline_random_times
+20220102063650_000130,25.4193,0.4938,candidate,baseline_random_times
+20220102063750_000131,47.5035,0.6112,candidate,baseline_random_times
+20220102063750_000131,31.7337,0.9330,candidate,baseline_random_times
+20220102064150_000135,46.8318,0.5697,candidate,baseline_random_times
+20220102064150_000135,7.0965,0.4732,candidate,baseline_random_times
+20220102064150_000135,38.3953,0.3381,candidate,baseline_random_times
+20220102064150_000135,8.6012,0.7968,candidate,baseline_random_times
+20220102064150_000135,56.6801,0.5105,candidate,baseline_random_times
+20220102064250_000136,37.0581,0.6509,candidate,baseline_random_times
+20220102064350_000137,26.2219,0.7001,candidate,baseline_random_times
+20220102064350_000137,41.8579,0.7036,candidate,baseline_random_times
+20220102064350_000137,3.6135,0.2893,candidate,baseline_random_times
+20220102064750_000141,59.3024,0.1918,candidate,baseline_random_times

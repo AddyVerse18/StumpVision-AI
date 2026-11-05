@@ -1,0 +1,1060 @@
+[
+  {
+    "clip_id": "20220102063650_000130",
+    "delivery_idx": 1,
+    "candidate_time_s": 11.25,
+    "points": [
+      {
+        "frame_idx": 663,
+        "time_s": 11.05,
+        "x": 750.5,
+        "y": 116.0,
+        "radius": 10.0,
+        "area": 227.5,
+        "confidence": 0.821764705882353
+      },
+      {
+        "frame_idx": 665,
+        "time_s": 11.0833,
+        "x": 779.0,
+        "y": 193.5,
+        "radius": 8.5,
+        "area": 161.5,
+        "confidence": 0.8252924699291481
+      },
+      {
+        "frame_idx": 667,
+        "time_s": 11.1167,
+        "x": 800.0,
+        "y": 252.5,
+        "radius": 7.5,
+        "area": 124.5,
+        "confidence": 0.8343355119825708
+      },
+      {
+        "frame_idx": 669,
+        "time_s": 11.15,
+        "x": 816.0,
+        "y": 299.0,
+        "radius": 6.0,
+        "area": 86.5,
+        "confidence": 0.8741503267973856
+      },
+      {
+        "frame_idx": 671,
+        "time_s": 11.1833,
+        "x": 829.0,
+        "y": 337.5,
+        "radius": 5.5,
+        "area": 76.5,
+        "confidence": 0.8649197860962567
+      },
+      {
+        "frame_idx": 673,
+        "time_s": 11.2167,
+        "x": 839.0,
+        "y": 370.5,
+        "radius": 5.5,
+        "area": 67.0,
+        "confidence": 0.7790017825311943
+      },
+      {
+        "frame_idx": 675,
+        "time_s": 11.25,
+        "x": 847.0,
+        "y": 399.0,
+        "radius": 5.0,
+        "area": 53.5,
+        "confidence": 0.8630882352941177
+      },
+      {
+        "frame_idx": 677,
+        "time_s": 11.2833,
+        "x": 853.5,
+        "y": 423.5,
+        "radius": 4.5,
+        "area": 46.0,
+        "confidence": 0.7941418542725732
+      }
+    ],
+    "t_release": 11.05,
+    "t_bounce": 11.2833,
+    "t_impact": 11.2833,
+    "bounce_x": 853.5,
+    "bounce_y": 423.5,
+    "length_classification": "good_length",
+    "line_classification": "middle",
+    "mean_speed_px_per_s": 1390.7,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102063650_000130",
+    "delivery_idx": 2,
+    "candidate_time_s": 35.25,
+    "points": [
+      {
+        "frame_idx": 2087,
+        "time_s": 34.7833,
+        "x": 762.5,
+        "y": 271.0,
+        "radius": 8.0,
+        "area": 133.5,
+        "confidence": 0.8097850678733032
+      },
+      {
+        "frame_idx": 2089,
+        "time_s": 34.8167,
+        "x": 782.0,
+        "y": 320.0,
+        "radius": 7.0,
+        "area": 111.0,
+        "confidence": 0.8248599439775911
+      },
+      {
+        "frame_idx": 2091,
+        "time_s": 34.85,
+        "x": 797.0,
+        "y": 361.0,
+        "radius": 6.0,
+        "area": 82.5,
+        "confidence": 0.8420915032679738
+      },
+      {
+        "frame_idx": 2093,
+        "time_s": 34.8833,
+        "x": 808.0,
+        "y": 395.5,
+        "radius": 5.5,
+        "area": 72.0,
+        "confidence": 0.8337611408199643
+      },
+      {
+        "frame_idx": 2095,
+        "time_s": 34.9167,
+        "x": 818.0,
+        "y": 425.0,
+        "radius": 5.0,
+        "area": 56.0,
+        "confidence": 0.8890686274509804
+      },
+      {
+        "frame_idx": 2097,
+        "time_s": 34.95,
+        "x": 826.0,
+        "y": 451.5,
+        "radius": 4.5,
+        "area": 47.0,
+        "confidence": 0.8535403050108932
+      },
+      {
+        "frame_idx": 2099,
+        "time_s": 34.9833,
+        "x": 832.5,
+        "y": 475.5,
+        "radius": 4.5,
+        "area": 42.5,
+        "confidence": 0.848988484282602
+      },
+      {
+        "frame_idx": 2101,
+        "time_s": 35.0167,
+        "x": 838.5,
+        "y": 497.0,
+        "radius": 4.0,
+        "area": 36.0,
+        "confidence": 0.8422268907563025
+      }
+    ],
+    "t_release": 34.7833,
+    "t_bounce": 35.0167,
+    "t_impact": 35.0167,
+    "bounce_x": 838.5,
+    "bounce_y": 497.0,
+    "length_classification": "yorker",
+    "line_classification": "middle",
+    "mean_speed_px_per_s": 1022.4,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102063650_000130",
+    "delivery_idx": 3,
+    "candidate_time_s": 54.75,
+    "points": [
+      {
+        "frame_idx": 3261,
+        "time_s": 54.35,
+        "x": 737.0,
+        "y": 152.0,
+        "radius": 9.0,
+        "area": 188.0,
+        "confidence": 0.8521650326797386
+      },
+      {
+        "frame_idx": 3263,
+        "time_s": 54.3833,
+        "x": 767.0,
+        "y": 221.0,
+        "radius": 8.0,
+        "area": 149.5,
+        "confidence": 0.824719887955182
+      },
+      {
+        "frame_idx": 3265,
+        "time_s": 54.4167,
+        "x": 789.5,
+        "y": 275.0,
+        "radius": 7.0,
+        "area": 112.5,
+        "confidence": 0.8675579322638146
+      },
+      {
+        "frame_idx": 3267,
+        "time_s": 54.45,
+        "x": 805.5,
+        "y": 318.0,
+        "radius": 6.0,
+        "area": 79.5,
+        "confidence": 0.8342543077837196
+      },
+      {
+        "frame_idx": 3269,
+        "time_s": 54.4833,
+        "x": 819.0,
+        "y": 354.0,
+        "radius": 6.0,
+        "area": 75.0,
+        "confidence": 0.81218954248366
+      },
+      {
+        "frame_idx": 3271,
+        "time_s": 54.5167,
+        "x": 829.5,
+        "y": 385.0,
+        "radius": 5.0,
+        "area": 59.5,
+        "confidence": 0.8369498910675381
+      },
+      {
+        "frame_idx": 3273,
+        "time_s": 54.55,
+        "x": 838.5,
+        "y": 412.0,
+        "radius": 5.0,
+        "area": 52.5,
+        "confidence": 0.7742919389978214
+      },
+      {
+        "frame_idx": 3275,
+        "time_s": 54.5833,
+        "x": 846.5,
+        "y": 436.5,
+        "radius": 4.5,
+        "area": 45.5,
+        "confidence": 0.7791333817477608
+      }
+    ],
+    "t_release": 54.35,
+    "t_bounce": 54.5833,
+    "t_impact": 54.5833,
+    "bounce_x": 846.5,
+    "bounce_y": 436.5,
+    "length_classification": "good_length",
+    "line_classification": "middle",
+    "mean_speed_px_per_s": 1307.5,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064250_000136",
+    "delivery_idx": 4,
+    "candidate_time_s": 48.25,
+    "points": [
+      {
+        "frame_idx": 2905,
+        "time_s": 48.4167,
+        "x": 738.0,
+        "y": 177.0,
+        "radius": 7.0,
+        "area": 108.5,
+        "confidence": 0.8965219421101774
+      },
+      {
+        "frame_idx": 2907,
+        "time_s": 48.45,
+        "x": 775.0,
+        "y": 239.5,
+        "radius": 6.5,
+        "area": 79.0,
+        "confidence": 0.8825540472599296
+      },
+      {
+        "frame_idx": 2909,
+        "time_s": 48.4833,
+        "x": 802.0,
+        "y": 288.5,
+        "radius": 6.5,
+        "area": 73.5,
+        "confidence": 0.84947209653092
+      },
+      {
+        "frame_idx": 2911,
+        "time_s": 48.5167,
+        "x": 824.5,
+        "y": 330.0,
+        "radius": 6.0,
+        "area": 28.0,
+        "confidence": 0.8646125116713352
+      },
+      {
+        "frame_idx": 2913,
+        "time_s": 48.55,
+        "x": 839.5,
+        "y": 361.5,
+        "radius": 5.5,
+        "area": 56.5,
+        "confidence": 0.7890275302040008
+      },
+      {
+        "frame_idx": 2915,
+        "time_s": 48.5833,
+        "x": 853.0,
+        "y": 389.5,
+        "radius": 4.5,
+        "area": 49.5,
+        "confidence": 0.8588235294117647
+      },
+      {
+        "frame_idx": 2917,
+        "time_s": 48.6167,
+        "x": 865.0,
+        "y": 415.0,
+        "radius": 5.0,
+        "area": 42.5,
+        "confidence": 0.7416176470588236
+      },
+      {
+        "frame_idx": 2919,
+        "time_s": 48.65,
+        "x": 874.5,
+        "y": 438.0,
+        "radius": 4.0,
+        "area": 32.0,
+        "confidence": 0.8157563025210084
+      }
+    ],
+    "t_release": 48.4167,
+    "t_bounce": 48.65,
+    "t_impact": 48.65,
+    "bounce_x": 874.5,
+    "bounce_y": 438.0,
+    "length_classification": "good_length",
+    "line_classification": "leg",
+    "mean_speed_px_per_s": 1263.7,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064350_000137",
+    "delivery_idx": 5,
+    "candidate_time_s": 17.25,
+    "points": [
+      {
+        "frame_idx": 1049,
+        "time_s": 17.4833,
+        "x": 535.5,
+        "y": 218.5,
+        "radius": 21.5,
+        "area": 405.5,
+        "confidence": 0.4825235720694879
+      },
+      {
+        "frame_idx": 1051,
+        "time_s": 17.5167,
+        "x": 529.5,
+        "y": 229.5,
+        "radius": 6.5,
+        "area": 29.0,
+        "confidence": 0.6384499361874928
+      },
+      {
+        "frame_idx": 1053,
+        "time_s": 17.55,
+        "x": 608.5,
+        "y": 213.0,
+        "radius": 5.0,
+        "area": 16.5,
+        "confidence": 0.7216470588235294
+      },
+      {
+        "frame_idx": 1057,
+        "time_s": 17.6167,
+        "x": 712.0,
+        "y": 304.0,
+        "radius": 43.0,
+        "area": 388.5,
+        "confidence": 0.4569349445204438
+      },
+      {
+        "frame_idx": 1059,
+        "time_s": 17.65,
+        "x": 712.0,
+        "y": 310.5,
+        "radius": 35.5,
+        "area": 549.5,
+        "confidence": 0.4830732762588604
+      },
+      {
+        "frame_idx": 1061,
+        "time_s": 17.6833,
+        "x": 714.0,
+        "y": 324.5,
+        "radius": 35.5,
+        "area": 518.0,
+        "confidence": 0.45727071878687453
+      },
+      {
+        "frame_idx": 1063,
+        "time_s": 17.7167,
+        "x": 719.0,
+        "y": 344.5,
+        "radius": 39.5,
+        "area": 540.5,
+        "confidence": 0.4451323145291872
+      }
+    ],
+    "t_release": 17.4833,
+    "t_bounce": 17.7167,
+    "t_impact": 17.7167,
+    "bounce_x": 719.0,
+    "bounce_y": 344.5,
+    "length_classification": "short",
+    "line_classification": "off",
+    "mean_speed_px_per_s": 1166.7,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064350_000137",
+    "delivery_idx": 6,
+    "candidate_time_s": 58.3833,
+    "points": [
+      {
+        "frame_idx": 3511,
+        "time_s": 58.5167,
+        "x": 525.0,
+        "y": 172.5,
+        "radius": 29.5,
+        "area": 979.5,
+        "confidence": 0.5869086075108009
+      },
+      {
+        "frame_idx": 3517,
+        "time_s": 58.6167,
+        "x": 554.5,
+        "y": 289.0,
+        "radius": 63.0,
+        "area": 2377.0,
+        "confidence": 0.5634292452964875
+      },
+      {
+        "frame_idx": 3519,
+        "time_s": 58.65,
+        "x": 592.0,
+        "y": 330.5,
+        "radius": 10.0,
+        "area": 16.5,
+        "confidence": 0.5563660130718955
+      },
+      {
+        "frame_idx": 3521,
+        "time_s": 58.6833,
+        "x": 634.0,
+        "y": 317.0,
+        "radius": 41.0,
+        "area": 2199.0,
+        "confidence": 0.6827964702796934
+      },
+      {
+        "frame_idx": 3523,
+        "time_s": 58.7167,
+        "x": 688.0,
+        "y": 312.5,
+        "radius": 47.5,
+        "area": 1748.0,
+        "confidence": 0.541863016674814
+      }
+    ],
+    "t_release": 58.5167,
+    "t_bounce": 58.65,
+    "t_impact": 58.7167,
+    "bounce_x": 592.0,
+    "bounce_y": 330.5,
+    "length_classification": "short",
+    "line_classification": "off",
+    "mean_speed_px_per_s": 1372.1,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064450_000138",
+    "delivery_idx": 7,
+    "candidate_time_s": 30.25,
+    "points": [
+      {
+        "frame_idx": 1815,
+        "time_s": 30.25,
+        "x": 521.0,
+        "y": 165.5,
+        "radius": 28.5,
+        "area": 834.5,
+        "confidence": 0.6220633282552788
+      },
+      {
+        "frame_idx": 1817,
+        "time_s": 30.2833,
+        "x": 535.0,
+        "y": 209.0,
+        "radius": 43.0,
+        "area": 2179.5,
+        "confidence": 0.6046654941046186
+      },
+      {
+        "frame_idx": 1819,
+        "time_s": 30.3167,
+        "x": 541.5,
+        "y": 254.0,
+        "radius": 52.0,
+        "area": 2491.0,
+        "confidence": 0.570932144869069
+      },
+      {
+        "frame_idx": 1821,
+        "time_s": 30.35,
+        "x": 603.5,
+        "y": 261.0,
+        "radius": 11.0,
+        "area": 13.5,
+        "confidence": 0.5733839947462238
+      },
+      {
+        "frame_idx": 1823,
+        "time_s": 30.3833,
+        "x": 621.5,
+        "y": 346.0,
+        "radius": 27.0,
+        "area": 188.5,
+        "confidence": 0.5770231442013198
+      },
+      {
+        "frame_idx": 1825,
+        "time_s": 30.4167,
+        "x": 670.5,
+        "y": 319.0,
+        "radius": 16.0,
+        "area": 23.0,
+        "confidence": 0.6252746788370521
+      },
+      {
+        "frame_idx": 1827,
+        "time_s": 30.45,
+        "x": 726.5,
+        "y": 303.5,
+        "radius": 9.5,
+        "area": 12.0,
+        "confidence": 0.6057950305628325
+      },
+      {
+        "frame_idx": 1829,
+        "time_s": 30.4833,
+        "x": 742.5,
+        "y": 341.5,
+        "radius": 25.5,
+        "area": 31.0,
+        "confidence": 0.5537569162362302
+      }
+    ],
+    "t_release": 30.25,
+    "t_bounce": 30.3833,
+    "t_impact": 30.4833,
+    "bounce_x": 621.5,
+    "bounce_y": 346.0,
+    "length_classification": "short",
+    "line_classification": "off",
+    "mean_speed_px_per_s": 1696.2,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064550_000139",
+    "delivery_idx": 8,
+    "candidate_time_s": 2.25,
+    "points": [
+      {
+        "frame_idx": 137,
+        "time_s": 2.2833,
+        "x": 531.5,
+        "y": 105.5,
+        "radius": 7.5,
+        "area": 10.0,
+        "confidence": 0.622782446311858
+      },
+      {
+        "frame_idx": 139,
+        "time_s": 2.3167,
+        "x": 531.0,
+        "y": 96.0,
+        "radius": 21.0,
+        "area": 24.0,
+        "confidence": 0.4320528211284514
+      },
+      {
+        "frame_idx": 141,
+        "time_s": 2.35,
+        "x": 540.0,
+        "y": 116.0,
+        "radius": 44.0,
+        "area": 1370.0,
+        "confidence": 0.5105018939393939
+      },
+      {
+        "frame_idx": 149,
+        "time_s": 2.4833,
+        "x": 745.0,
+        "y": 242.5,
+        "radius": 19.5,
+        "area": 18.0,
+        "confidence": 0.5881060116354234
+      },
+      {
+        "frame_idx": 151,
+        "time_s": 2.5167,
+        "x": 794.0,
+        "y": 209.5,
+        "radius": 14.0,
+        "area": 16.0,
+        "confidence": 0.5634229691876751
+      }
+    ],
+    "t_release": 2.2833,
+    "t_bounce": 2.4833,
+    "t_impact": 2.5167,
+    "bounce_x": 745.0,
+    "bounce_y": 242.5,
+    "length_classification": "short",
+    "line_classification": "off",
+    "mean_speed_px_per_s": 1419.9,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064550_000139",
+    "delivery_idx": 9,
+    "candidate_time_s": 43.4833,
+    "points": [
+      {
+        "frame_idx": 2617,
+        "time_s": 43.6167,
+        "x": 518.0,
+        "y": 170.0,
+        "radius": 26.0,
+        "area": 614.5,
+        "confidence": 0.6579457851516675
+      },
+      {
+        "frame_idx": 2619,
+        "time_s": 43.65,
+        "x": 535.0,
+        "y": 217.5,
+        "radius": 42.5,
+        "area": 1762.0,
+        "confidence": 0.5707556434338441
+      },
+      {
+        "frame_idx": 2621,
+        "time_s": 43.6833,
+        "x": 543.5,
+        "y": 250.5,
+        "radius": 62.5,
+        "area": 1992.5,
+        "confidence": 0.5651876493125987
+      },
+      {
+        "frame_idx": 2623,
+        "time_s": 43.7167,
+        "x": 583.5,
+        "y": 322.0,
+        "radius": 37.0,
+        "area": 890.5,
+        "confidence": 0.6628037298875846
+      },
+      {
+        "frame_idx": 2625,
+        "time_s": 43.75,
+        "x": 641.5,
+        "y": 325.0,
+        "radius": 9.0,
+        "area": 12.0,
+        "confidence": 0.6384168482207698
+      },
+      {
+        "frame_idx": 2627,
+        "time_s": 43.7833,
+        "x": 668.0,
+        "y": 314.5,
+        "radius": 4.0,
+        "area": 14.0,
+        "confidence": 0.8581372549019607
+      },
+      {
+        "frame_idx": 2629,
+        "time_s": 43.8167,
+        "x": 695.0,
+        "y": 332.0,
+        "radius": 37.0,
+        "area": 1479.5,
+        "confidence": 0.5769425228089775
+      },
+      {
+        "frame_idx": 2631,
+        "time_s": 43.85,
+        "x": 730.5,
+        "y": 336.5,
+        "radius": 54.5,
+        "area": 1987.5,
+        "confidence": 0.6355276677612423
+      }
+    ],
+    "t_release": 43.6167,
+    "t_bounce": 43.85,
+    "t_impact": 43.85,
+    "bounce_x": 730.5,
+    "bounce_y": 336.5,
+    "length_classification": "short",
+    "line_classification": "off",
+    "mean_speed_px_per_s": 1375.9,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064650_000140",
+    "delivery_idx": 10,
+    "candidate_time_s": 18.75,
+    "points": [
+      {
+        "frame_idx": 1129,
+        "time_s": 18.8167,
+        "x": 508.0,
+        "y": 120.0,
+        "radius": 8.0,
+        "area": 11.5,
+        "confidence": 0.49629289215686273
+      },
+      {
+        "frame_idx": 1131,
+        "time_s": 18.85,
+        "x": 548.5,
+        "y": 136.0,
+        "radius": 12.5,
+        "area": 15.0,
+        "confidence": 0.4624392156862745
+      },
+      {
+        "frame_idx": 1133,
+        "time_s": 18.8833,
+        "x": 586.5,
+        "y": 176.0,
+        "radius": 14.0,
+        "area": 16.0,
+        "confidence": 0.482057267351385
+      },
+      {
+        "frame_idx": 1135,
+        "time_s": 18.9167,
+        "x": 582.0,
+        "y": 189.0,
+        "radius": 45.0,
+        "area": 1446.0,
+        "confidence": 0.5281258302779106
+      },
+      {
+        "frame_idx": 1141,
+        "time_s": 19.0167,
+        "x": 695.0,
+        "y": 317.0,
+        "radius": 7.0,
+        "area": 10.0,
+        "confidence": 0.6643657462985194
+      },
+      {
+        "frame_idx": 1143,
+        "time_s": 19.05,
+        "x": 751.5,
+        "y": 305.0,
+        "radius": 15.5,
+        "area": 19.0,
+        "confidence": 0.5190860215053764
+      }
+    ],
+    "t_release": 18.8167,
+    "t_bounce": 19.0167,
+    "t_impact": 19.05,
+    "bounce_x": 695.0,
+    "bounce_y": 317.0,
+    "length_classification": "short",
+    "line_classification": "off",
+    "mean_speed_px_per_s": 1461.5,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064750_000141",
+    "delivery_idx": 11,
+    "candidate_time_s": 55.3833,
+    "points": [
+      {
+        "frame_idx": 3321,
+        "time_s": 55.35,
+        "x": 614.0,
+        "y": 57.0,
+        "radius": 9.0,
+        "area": 17.5,
+        "confidence": 0.5701369436663554
+      },
+      {
+        "frame_idx": 3325,
+        "time_s": 55.4167,
+        "x": 666.0,
+        "y": 145.5,
+        "radius": 10.5,
+        "area": 295.0,
+        "confidence": 0.8831652661064425
+      },
+      {
+        "frame_idx": 3327,
+        "time_s": 55.45,
+        "x": 707.0,
+        "y": 215.5,
+        "radius": 8.5,
+        "area": 205.0,
+        "confidence": 0.8847895040369089
+      },
+      {
+        "frame_idx": 3329,
+        "time_s": 55.4833,
+        "x": 738.5,
+        "y": 271.5,
+        "radius": 7.5,
+        "area": 162.0,
+        "confidence": 0.9253681917211329
+      },
+      {
+        "frame_idx": 3331,
+        "time_s": 55.5167,
+        "x": 762.0,
+        "y": 318.0,
+        "radius": 8.0,
+        "area": 131.0,
+        "confidence": 0.8256477591036415
+      },
+      {
+        "frame_idx": 3333,
+        "time_s": 55.55,
+        "x": 781.0,
+        "y": 353.5,
+        "radius": 5.5,
+        "area": 26.5,
+        "confidence": 0.7232798573975044
+      },
+      {
+        "frame_idx": 3335,
+        "time_s": 55.5833,
+        "x": 813.0,
+        "y": 416.5,
+        "radius": 4.0,
+        "area": 14.0,
+        "confidence": 0.6612044817927171
+      }
+    ],
+    "t_release": 55.35,
+    "t_bounce": 55.5833,
+    "t_impact": 55.5833,
+    "bounce_x": 813.0,
+    "bounce_y": 416.5,
+    "length_classification": "good_length",
+    "line_classification": "off",
+    "mean_speed_px_per_s": 1761.9,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064850_000142",
+    "delivery_idx": 12,
+    "candidate_time_s": 24.0833,
+    "points": [
+      {
+        "frame_idx": 1445,
+        "time_s": 24.0833,
+        "x": 635.5,
+        "y": 237.0,
+        "radius": 5.5,
+        "area": 18.0,
+        "confidence": 0.6787433155080215
+      },
+      {
+        "frame_idx": 1447,
+        "time_s": 24.1167,
+        "x": 638.0,
+        "y": 243.5,
+        "radius": 10.5,
+        "area": 266.0,
+        "confidence": 0.9021993982778296
+      },
+      {
+        "frame_idx": 1449,
+        "time_s": 24.15,
+        "x": 682.0,
+        "y": 319.5,
+        "radius": 8.5,
+        "area": 182.0,
+        "confidence": 0.9112456747404845
+      },
+      {
+        "frame_idx": 1451,
+        "time_s": 24.1833,
+        "x": 714.0,
+        "y": 376.0,
+        "radius": 7.0,
+        "area": 78.5,
+        "confidence": 0.6248832866479925
+      },
+      {
+        "frame_idx": 1453,
+        "time_s": 24.2167,
+        "x": 758.0,
+        "y": 456.5,
+        "radius": 4.0,
+        "area": 19.5,
+        "confidence": 0.6422969187675069
+      },
+      {
+        "frame_idx": 1455,
+        "time_s": 24.25,
+        "x": 773.0,
+        "y": 487.5,
+        "radius": 4.0,
+        "area": 16.5,
+        "confidence": 0.6357142857142857
+      },
+      {
+        "frame_idx": 1457,
+        "time_s": 24.2833,
+        "x": 784.5,
+        "y": 515.5,
+        "radius": 3.5,
+        "area": 13.5,
+        "confidence": 0.6323329331732693
+      },
+      {
+        "frame_idx": 1459,
+        "time_s": 24.3167,
+        "x": 795.0,
+        "y": 538.5,
+        "radius": 3.5,
+        "area": 17.0,
+        "confidence": 0.6521942110177403
+      }
+    ],
+    "t_release": 24.0833,
+    "t_bounce": 24.3167,
+    "t_impact": 24.3167,
+    "bounce_x": 795.0,
+    "bounce_y": 538.5,
+    "length_classification": "yorker",
+    "line_classification": "off",
+    "mean_speed_px_per_s": 1462.9,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064850_000142",
+    "delivery_idx": 13,
+    "candidate_time_s": 55.25,
+    "points": [
+      {
+        "frame_idx": 3311,
+        "time_s": 55.1833,
+        "x": 669.5,
+        "y": 244.5,
+        "radius": 9.5,
+        "area": 225.0,
+        "confidence": 0.8938626843926425
+      },
+      {
+        "frame_idx": 3313,
+        "time_s": 55.2167,
+        "x": 708.5,
+        "y": 312.0,
+        "radius": 8.0,
+        "area": 157.5,
+        "confidence": 0.9043954248366013
+      },
+      {
+        "frame_idx": 3315,
+        "time_s": 55.25,
+        "x": 735.5,
+        "y": 364.5,
+        "radius": 7.5,
+        "area": 129.5,
+        "confidence": 0.7848714596949891
+      },
+      {
+        "frame_idx": 3317,
+        "time_s": 55.2833,
+        "x": 775.5,
+        "y": 439.0,
+        "radius": 4.5,
+        "area": 11.5,
+        "confidence": 0.5957516339869281
+      },
+      {
+        "frame_idx": 3321,
+        "time_s": 55.35,
+        "x": 774.5,
+        "y": 562.5,
+        "radius": 7.5,
+        "area": 25.5,
+        "confidence": 0.6466230936819172
+      },
+      {
+        "frame_idx": 3323,
+        "time_s": 55.3833,
+        "x": 823.5,
+        "y": 549.0,
+        "radius": 17.0,
+        "area": 235.5,
+        "confidence": 0.5306501547987617
+      },
+      {
+        "frame_idx": 3325,
+        "time_s": 55.4167,
+        "x": 865.5,
+        "y": 502.5,
+        "radius": 16.5,
+        "area": 200.5,
+        "confidence": 0.6029434617669911
+      }
+    ],
+    "t_release": 55.1833,
+    "t_bounce": 55.35,
+    "t_impact": 55.4167,
+    "bounce_x": 774.5,
+    "bounce_y": 562.5,
+    "length_classification": "yorker",
+    "line_classification": "off",
+    "mean_speed_px_per_s": 1964.6,
+    "estimated_speed_kmh": 206.9,
+    "is_valid": true
+  }
+]

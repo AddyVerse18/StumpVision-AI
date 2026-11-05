@@ -1,0 +1,6 @@
+clip_id,block_id,view,split,n_truths,n_preds,tp,fp,fn,recall,precision,notes
+20220102065050_000144,block_test,batter_end,test,0,0,0,0,0,1.000,1.000,nan
+20220102065150_000145,block_test,batter_end,test,0,0,0,0,0,1.000,1.000,nan
+20220102065250_000146,block_test,batter_end,test,0,0,0,0,0,1.000,1.000,nan
+20220102065350_000147,block_test,batter_end,test,0,0,0,0,0,1.000,1.000,nan
+20220102065450_000148,block_test,batter_end,test,0,0,0,0,0,1.000,1.000,nan

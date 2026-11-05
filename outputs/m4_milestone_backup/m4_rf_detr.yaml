@@ -1,0 +1,59 @@
+# StumpVision M4 Configuration: RF-DETR Cricket Object Detection
+schema_version: "1.0"
+
+# External footage location
+data_dir: "D:/Computer Vision Projects/StumpEye_Footage"
+
+# Split & Label Source Files
+manifest_path: "labels/manifest.csv"
+labels_path: "labels/labels.csv"
+status_path: "labels/clip_status.csv"
+target_split: "dev"
+
+# Target Detection Categories
+categories:
+  - id: 1
+    name: "person"
+    supercategory: "cricket"
+  - id: 2
+    name: "stumps"
+    supercategory: "cricket"
+  - id: 3
+    name: "pitch"
+    supercategory: "cricket"
+  - id: 4
+    name: "crease"
+    supercategory: "cricket"
+  - id: 5
+    name: "bat"
+    supercategory: "cricket"
+  - id: 6
+    name: "ball"
+    supercategory: "cricket"
+
+# Keyframe Extraction Settings
+frame_extraction:
+  # Output folder name relative to data_dir (ensures zero media in project repo)
+  frames_dirname: "m4_frames"
+  # Index manifest for extracted frames
+  index_manifest: "labels/m4_extracted_frames.csv"
+  # Output COCO annotations JSON path
+  coco_annotations: "labels/m4_annotations/cricket_dev_coco.json"
+  # Delivery temporal offsets (seconds around delivery point)
+  delivery_offsets_s: [-0.25, 0.0, 0.25]
+  # Sample interval in seconds for idle / distractor scenes
+  idle_interval_s: 20.0
+  # Image format & quality
+  jpeg_quality: 95
+
+# Model & Training Specification (for Colab GPU workflow)
+model:
+  framework: "rf-detr"
+  backbone: "hgnetv2"
+  image_size: 640
+  batch_size: 8
+  num_workers: 2
+  learning_rate: 0.0001
+  epochs: 30
+  confidence_threshold: 0.5
+

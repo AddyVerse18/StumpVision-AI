@@ -1,0 +1,14 @@
+clip_id,time_s,score,status,method_version
+20220102063650_000130,11.2500,0.8960,candidate,m4_fused_candidates_v1
+20220102063650_000130,35.2500,0.8807,candidate,m4_fused_candidates_v1
+20220102063650_000130,54.7500,0.8956,candidate,m4_fused_candidates_v1
+20220102064250_000136,48.2500,0.9233,candidate,m4_fused_candidates_v1
+20220102064350_000137,17.2500,0.9210,candidate,m4_fused_candidates_v1
+20220102064350_000137,58.3833,0.9021,candidate,m4_fused_candidates_v1
+20220102064450_000138,30.2500,0.9086,candidate,m4_fused_candidates_v1
+20220102064550_000139,2.2500,0.9394,candidate,m4_fused_candidates_v1
+20220102064550_000139,43.4833,0.9070,candidate,m4_fused_candidates_v1
+20220102064650_000140,18.7500,0.9468,candidate,m4_fused_candidates_v1
+20220102064750_000141,55.3833,0.9006,candidate,m4_fused_candidates_v1
+20220102064850_000142,24.0833,0.9105,candidate,m4_fused_candidates_v1
+20220102064850_000142,55.2500,0.9288,candidate,m4_fused_candidates_v1

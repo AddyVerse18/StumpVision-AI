@@ -1,0 +1,14 @@
+clip_id,block_id,view,split,n_truths,n_preds,tp,fp,fn,recall,precision,notes
+20220102063650_000130,block_1,bowler_end,dev,3,6,2,4,1,0.667,0.333,nan;nan;nan
+20220102063750_000131,block_1,batter_end,dev,0,1,0,1,0,0.000,0.000,nan
+20220102063850_000132,block_1,batter_end,dev,0,0,0,0,0,1.000,1.000,nan
+20220102063950_000133,block_1,batter_end,dev,0,0,0,0,0,1.000,1.000,nan
+20220102064050_000134,block_2,batter_end,dev,0,0,0,0,0,1.000,1.000,nan
+20220102064150_000135,block_2,batter_end,dev,0,0,0,0,0,1.000,1.000,nan
+20220102064250_000136,block_2,bowler_end,dev,1,1,1,0,0,1.000,1.000,nan
+20220102064350_000137,block_2,bowler_end,dev,2,2,2,0,0,1.000,1.000,nan;nan
+20220102064450_000138,block_3,bowler_end,dev,1,1,1,0,0,1.000,1.000,nan
+20220102064550_000139,block_3,bowler_end,dev,2,2,2,0,0,1.000,1.000,nan;nan
+20220102064650_000140,block_3,bowler_end,dev,1,1,1,0,0,1.000,1.000,nan
+20220102064750_000141,block_3,bowler_end,dev,1,2,1,1,0,1.000,0.500,nan
+20220102064850_000142,block_3,bowler_end,dev,2,2,2,0,0,1.000,1.000,nan;nan

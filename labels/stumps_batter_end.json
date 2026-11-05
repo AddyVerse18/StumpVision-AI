@@ -1,0 +1,46 @@
+{
+  "camera": "cam1",
+  "resolution": [1920, 1080],
+  "description": "Ground-truth calibration of striker batter-end stumps in Camera 1",
+  "stumps": {
+    "off_stump": {
+      "x": 896.0,
+      "top_y": 522.0,
+      "bottom_y": 572.0
+    },
+    "middle_stump": {
+      "x": 901.5,
+      "top_y": 522.0,
+      "bottom_y": 572.0
+    },
+    "leg_stump": {
+      "x": 907.0,
+      "top_y": 522.0,
+      "bottom_y": 572.0
+    },
+    "bails": {
+      "left_x": 893.0,
+      "right_x": 910.0,
+      "y": 522.0
+    },
+    "bbox": [892.0, 520.0, 18.0, 52.0]
+  },
+  "crease_geometry": {
+    "popping_crease_y": 540.0,
+    "bowling_crease_y": 572.0,
+    "wide_guideline_off_x": 858.7,
+    "wide_guideline_leg_x": 922.0,
+    "return_crease_off_x": 838.0,
+    "return_crease_leg_x": 965.0
+  },
+  "stump_corridors_at_crease": {
+    "wide_outside_off": "< 858.7",
+    "outside_off": "858.7 to 892.0",
+    "off_stump": "892.0 to 898.5",
+    "middle_stump": "898.5 to 904.5",
+    "leg_stump": "904.5 to 910.5",
+    "outside_leg": "910.5 to 922.0",
+    "wide_down_leg": "> 922.0"
+  }
+}
+

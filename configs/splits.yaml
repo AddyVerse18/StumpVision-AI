@@ -1,0 +1,24 @@
+# StumpVision AI Dataset Splits Configuration
+# Partitions clips strictly by sequence number before any detector is built.
+
+splits:
+  dev:
+    blocks:
+      - block_id: block_1
+        sequence_range: [130, 133]
+      - block_id: block_2
+        sequence_range: [134, 137]
+      - block_id: block_3
+        sequence_range: [138, 142]
+
+  buffer:
+    blocks:
+      - block_id: block_buffer
+        sequence_range: [143, 143]
+        description: "Buffer clip excluded from dev and test to prevent boundary leakage"
+
+  test:
+    blocks:
+      - block_id: block_test
+        sequence_range: [144, 148]
+        description: "Locked test set. Fingerprint recorded in docs/DECISIONS.md"

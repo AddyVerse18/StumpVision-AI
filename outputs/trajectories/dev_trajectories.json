@@ -1,0 +1,2038 @@
+[
+  {
+    "clip_id": "20220102063650_000130",
+    "delivery_idx": 1,
+    "candidate_time_s": 11.25,
+    "points": [
+      {
+        "frame_idx": 664,
+        "time_s": 11.0667,
+        "x": 750.0,
+        "y": 116.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 666,
+        "time_s": 11.1,
+        "x": 764.7,
+        "y": 166.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 668,
+        "time_s": 11.1333,
+        "x": 779.4,
+        "y": 214.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 670,
+        "time_s": 11.1667,
+        "x": 794.1,
+        "y": 260.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 672,
+        "time_s": 11.2,
+        "x": 808.9,
+        "y": 304.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 674,
+        "time_s": 11.2333,
+        "x": 823.6,
+        "y": 346.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 676,
+        "time_s": 11.2667,
+        "x": 838.3,
+        "y": 386.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 678,
+        "time_s": 11.3,
+        "x": 853.0,
+        "y": 424.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 680,
+        "time_s": 11.3333,
+        "x": 858.5,
+        "y": 445.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 682,
+        "time_s": 11.3667,
+        "x": 864.0,
+        "y": 466.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 684,
+        "time_s": 11.4,
+        "x": 869.5,
+        "y": 487.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 686,
+        "time_s": 11.4333,
+        "x": 875.0,
+        "y": 508.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 11.0667,
+    "t_bounce": 11.3,
+    "t_impact": 11.4333,
+    "bounce_x": 853.0,
+    "bounce_y": 424.0,
+    "length_classification": "good_length",
+    "line_classification": "off",
+    "stump_line": "outside_off",
+    "stump_line_display": "Outside Off",
+    "mean_speed_px_per_s": 1123.1,
+    "estimated_speed_kmh": 131.1,
+    "speed_release_kmh": 131.1,
+    "speed_release_mph": 81.5,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102063650_000130",
+    "delivery_idx": 2,
+    "candidate_time_s": 35.25,
+    "points": [
+      {
+        "frame_idx": 2086,
+        "time_s": 34.7667,
+        "x": 736.0,
+        "y": 173.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 2088,
+        "time_s": 34.8,
+        "x": 748.6,
+        "y": 219.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2090,
+        "time_s": 34.8333,
+        "x": 761.2,
+        "y": 263.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2092,
+        "time_s": 34.8667,
+        "x": 773.9,
+        "y": 306.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2094,
+        "time_s": 34.9,
+        "x": 786.5,
+        "y": 347.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2096,
+        "time_s": 34.9333,
+        "x": 799.1,
+        "y": 387.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2098,
+        "time_s": 34.9667,
+        "x": 811.8,
+        "y": 424.9,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2100,
+        "time_s": 35.0,
+        "x": 824.4,
+        "y": 461.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2102,
+        "time_s": 35.0333,
+        "x": 837.0,
+        "y": 496.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 2103,
+        "time_s": 35.05,
+        "x": 839.3,
+        "y": 505.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2104,
+        "time_s": 35.0667,
+        "x": 841.7,
+        "y": 515.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2105,
+        "time_s": 35.0833,
+        "x": 844.0,
+        "y": 524.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2106,
+        "time_s": 35.1,
+        "x": 846.3,
+        "y": 534.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2107,
+        "time_s": 35.1167,
+        "x": 848.7,
+        "y": 543.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2108,
+        "time_s": 35.1333,
+        "x": 851.0,
+        "y": 553.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 34.7667,
+    "t_bounce": 35.0333,
+    "t_impact": 35.1333,
+    "bounce_x": 837.0,
+    "bounce_y": 496.0,
+    "length_classification": "yorker",
+    "line_classification": "off",
+    "stump_line": "wide_off",
+    "stump_line_display": "Wide Outside Off",
+    "mean_speed_px_per_s": 1083.6,
+    "estimated_speed_kmh": 127.1,
+    "speed_release_kmh": 127.1,
+    "speed_release_mph": 79.0,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102063650_000130",
+    "delivery_idx": 3,
+    "candidate_time_s": 54.75,
+    "points": [
+      {
+        "frame_idx": 3262,
+        "time_s": 54.3667,
+        "x": 737.0,
+        "y": 152.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 3264,
+        "time_s": 54.4,
+        "x": 752.6,
+        "y": 198.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3266,
+        "time_s": 54.4333,
+        "x": 768.1,
+        "y": 242.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3268,
+        "time_s": 54.4667,
+        "x": 783.7,
+        "y": 285.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3270,
+        "time_s": 54.5,
+        "x": 799.3,
+        "y": 326.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3272,
+        "time_s": 54.5333,
+        "x": 814.9,
+        "y": 364.9,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3274,
+        "time_s": 54.5667,
+        "x": 830.4,
+        "y": 401.9,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3276,
+        "time_s": 54.6,
+        "x": 846.0,
+        "y": 437.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 3278,
+        "time_s": 54.6333,
+        "x": 850.4,
+        "y": 456.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3280,
+        "time_s": 54.6667,
+        "x": 854.8,
+        "y": 475.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3282,
+        "time_s": 54.7,
+        "x": 859.2,
+        "y": 494.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3284,
+        "time_s": 54.7333,
+        "x": 863.6,
+        "y": 513.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3286,
+        "time_s": 54.7667,
+        "x": 868.0,
+        "y": 532.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 54.3667,
+    "t_bounce": 54.6,
+    "t_impact": 54.7667,
+    "bounce_x": 846.0,
+    "bounce_y": 437.0,
+    "length_classification": "good_length",
+    "line_classification": "off",
+    "stump_line": "outside_off",
+    "stump_line_display": "Outside Off",
+    "mean_speed_px_per_s": 1007.0,
+    "estimated_speed_kmh": 116.4,
+    "speed_release_kmh": 116.4,
+    "speed_release_mph": 72.3,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064250_000136",
+    "delivery_idx": 4,
+    "candidate_time_s": 48.25,
+    "points": [
+      {
+        "frame_idx": 2903,
+        "time_s": 48.3833,
+        "x": 728.0,
+        "y": 195.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 2905,
+        "time_s": 48.4167,
+        "x": 746.2,
+        "y": 229.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2907,
+        "time_s": 48.45,
+        "x": 764.5,
+        "y": 262.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2909,
+        "time_s": 48.4833,
+        "x": 782.8,
+        "y": 294.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2911,
+        "time_s": 48.5167,
+        "x": 801.0,
+        "y": 325.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2913,
+        "time_s": 48.55,
+        "x": 819.2,
+        "y": 355.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2915,
+        "time_s": 48.5833,
+        "x": 837.5,
+        "y": 383.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2917,
+        "time_s": 48.6167,
+        "x": 855.8,
+        "y": 411.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2919,
+        "time_s": 48.65,
+        "x": 874.0,
+        "y": 437.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 2920,
+        "time_s": 48.6667,
+        "x": 877.2,
+        "y": 453.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2921,
+        "time_s": 48.6833,
+        "x": 880.3,
+        "y": 469.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2922,
+        "time_s": 48.7,
+        "x": 883.5,
+        "y": 486.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2923,
+        "time_s": 48.7167,
+        "x": 886.7,
+        "y": 502.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2924,
+        "time_s": 48.7333,
+        "x": 889.8,
+        "y": 518.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2925,
+        "time_s": 48.75,
+        "x": 893.0,
+        "y": 535.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 48.3833,
+    "t_bounce": 48.65,
+    "t_impact": 48.75,
+    "bounce_x": 874.0,
+    "bounce_y": 437.0,
+    "length_classification": "good_length",
+    "line_classification": "off",
+    "stump_line": "off_stump",
+    "stump_line_display": "Off Stump",
+    "mean_speed_px_per_s": 1043.6,
+    "estimated_speed_kmh": 113.7,
+    "speed_release_kmh": 113.7,
+    "speed_release_mph": 70.6,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064350_000137",
+    "delivery_idx": 5,
+    "candidate_time_s": 17.25,
+    "points": [
+      {
+        "frame_idx": 1025,
+        "time_s": 17.0833,
+        "x": 697.0,
+        "y": 215.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 1026,
+        "time_s": 17.1,
+        "x": 708.6,
+        "y": 242.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1027,
+        "time_s": 17.1167,
+        "x": 720.3,
+        "y": 268.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1028,
+        "time_s": 17.1333,
+        "x": 731.9,
+        "y": 294.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1029,
+        "time_s": 17.15,
+        "x": 743.5,
+        "y": 319.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1030,
+        "time_s": 17.1667,
+        "x": 755.2,
+        "y": 343.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1031,
+        "time_s": 17.1833,
+        "x": 766.8,
+        "y": 367.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1032,
+        "time_s": 17.2,
+        "x": 778.5,
+        "y": 390.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1033,
+        "time_s": 17.2167,
+        "x": 790.1,
+        "y": 412.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1034,
+        "time_s": 17.2333,
+        "x": 801.7,
+        "y": 433.9,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1035,
+        "time_s": 17.25,
+        "x": 813.4,
+        "y": 454.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1036,
+        "time_s": 17.2667,
+        "x": 825.0,
+        "y": 475.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 1037,
+        "time_s": 17.2833,
+        "x": 829.0,
+        "y": 486.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1038,
+        "time_s": 17.3,
+        "x": 833.0,
+        "y": 497.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1039,
+        "time_s": 17.3167,
+        "x": 837.0,
+        "y": 508.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1040,
+        "time_s": 17.3333,
+        "x": 841.0,
+        "y": 519.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1041,
+        "time_s": 17.35,
+        "x": 845.0,
+        "y": 530.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 17.0833,
+    "t_bounce": 17.2667,
+    "t_impact": 17.35,
+    "bounce_x": 825.0,
+    "bounce_y": 475.0,
+    "length_classification": "full",
+    "line_classification": "off",
+    "stump_line": "wide_off",
+    "stump_line_display": "Wide Outside Off",
+    "mean_speed_px_per_s": 1306.8,
+    "estimated_speed_kmh": 144.8,
+    "speed_release_kmh": 144.8,
+    "speed_release_mph": 90.0,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064350_000137",
+    "delivery_idx": 6,
+    "candidate_time_s": 58.3833,
+    "points": [
+      {
+        "frame_idx": 3501,
+        "time_s": 58.35,
+        "x": 695.0,
+        "y": 210.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 3502,
+        "time_s": 58.3667,
+        "x": 706.0,
+        "y": 238.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3503,
+        "time_s": 58.3833,
+        "x": 717.0,
+        "y": 266.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3504,
+        "time_s": 58.4,
+        "x": 728.0,
+        "y": 293.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3505,
+        "time_s": 58.4167,
+        "x": 739.0,
+        "y": 319.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3506,
+        "time_s": 58.4333,
+        "x": 750.0,
+        "y": 345.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3507,
+        "time_s": 58.45,
+        "x": 761.0,
+        "y": 370.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3508,
+        "time_s": 58.4667,
+        "x": 772.0,
+        "y": 394.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3509,
+        "time_s": 58.4833,
+        "x": 783.0,
+        "y": 418.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3510,
+        "time_s": 58.5,
+        "x": 794.0,
+        "y": 440.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3511,
+        "time_s": 58.5167,
+        "x": 805.0,
+        "y": 462.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3512,
+        "time_s": 58.5333,
+        "x": 816.0,
+        "y": 484.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 3513,
+        "time_s": 58.55,
+        "x": 819.7,
+        "y": 494.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3514,
+        "time_s": 58.5667,
+        "x": 823.3,
+        "y": 504.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3515,
+        "time_s": 58.5833,
+        "x": 827.0,
+        "y": 514.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3516,
+        "time_s": 58.6,
+        "x": 830.7,
+        "y": 524.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3517,
+        "time_s": 58.6167,
+        "x": 834.3,
+        "y": 534.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3518,
+        "time_s": 58.6333,
+        "x": 838.0,
+        "y": 545.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 58.35,
+    "t_bounce": 58.5333,
+    "t_impact": 58.6333,
+    "bounce_x": 816.0,
+    "bounce_y": 484.0,
+    "length_classification": "full",
+    "line_classification": "off",
+    "stump_line": "wide_off",
+    "stump_line_display": "Wide Outside Off",
+    "mean_speed_px_per_s": 1286.8,
+    "estimated_speed_kmh": 144.9,
+    "speed_release_kmh": 144.9,
+    "speed_release_mph": 90.0,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064450_000138",
+    "delivery_idx": 7,
+    "candidate_time_s": 30.25,
+    "points": [
+      {
+        "frame_idx": 1820,
+        "time_s": 30.3333,
+        "x": 675.0,
+        "y": 195.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 1822,
+        "time_s": 30.3667,
+        "x": 687.8,
+        "y": 244.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1824,
+        "time_s": 30.4,
+        "x": 700.7,
+        "y": 290.9,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1826,
+        "time_s": 30.4333,
+        "x": 713.5,
+        "y": 335.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1828,
+        "time_s": 30.4667,
+        "x": 726.3,
+        "y": 377.6,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1830,
+        "time_s": 30.5,
+        "x": 739.2,
+        "y": 417.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1832,
+        "time_s": 30.5333,
+        "x": 752.0,
+        "y": 455.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 1833,
+        "time_s": 30.55,
+        "x": 755.8,
+        "y": 469.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1834,
+        "time_s": 30.5667,
+        "x": 759.7,
+        "y": 483.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1835,
+        "time_s": 30.5833,
+        "x": 763.5,
+        "y": 497.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1836,
+        "time_s": 30.6,
+        "x": 767.3,
+        "y": 511.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1837,
+        "time_s": 30.6167,
+        "x": 771.2,
+        "y": 525.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1838,
+        "time_s": 30.6333,
+        "x": 775.0,
+        "y": 540.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 30.3333,
+    "t_bounce": 30.5333,
+    "t_impact": 30.6333,
+    "bounce_x": 752.0,
+    "bounce_y": 455.0,
+    "length_classification": "good_length",
+    "line_classification": "off",
+    "stump_line": "wide_off",
+    "stump_line_display": "Wide Outside Off",
+    "mean_speed_px_per_s": 1197.7,
+    "estimated_speed_kmh": 141.0,
+    "speed_release_kmh": 141.0,
+    "speed_release_mph": 87.6,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064550_000139",
+    "delivery_idx": 8,
+    "candidate_time_s": 2.25,
+    "points": [
+      {
+        "frame_idx": 132,
+        "time_s": 2.2,
+        "x": 700.0,
+        "y": 190.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 133,
+        "time_s": 2.2167,
+        "x": 712.0,
+        "y": 220.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 134,
+        "time_s": 2.2333,
+        "x": 724.0,
+        "y": 249.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 135,
+        "time_s": 2.25,
+        "x": 736.0,
+        "y": 277.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 136,
+        "time_s": 2.2667,
+        "x": 748.0,
+        "y": 304.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 137,
+        "time_s": 2.2833,
+        "x": 760.0,
+        "y": 331.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 138,
+        "time_s": 2.3,
+        "x": 772.0,
+        "y": 356.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 139,
+        "time_s": 2.3167,
+        "x": 784.0,
+        "y": 380.9,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 140,
+        "time_s": 2.3333,
+        "x": 796.0,
+        "y": 404.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 141,
+        "time_s": 2.35,
+        "x": 808.0,
+        "y": 427.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 142,
+        "time_s": 2.3667,
+        "x": 812.5,
+        "y": 443.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 143,
+        "time_s": 2.3833,
+        "x": 817.0,
+        "y": 459.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 144,
+        "time_s": 2.4,
+        "x": 821.5,
+        "y": 476.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 145,
+        "time_s": 2.4167,
+        "x": 826.0,
+        "y": 492.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 146,
+        "time_s": 2.4333,
+        "x": 830.5,
+        "y": 508.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 147,
+        "time_s": 2.45,
+        "x": 835.0,
+        "y": 525.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 2.2,
+    "t_bounce": 2.35,
+    "t_impact": 2.45,
+    "bounce_x": 808.0,
+    "bounce_y": 427.0,
+    "length_classification": "good_length",
+    "line_classification": "off",
+    "stump_line": "wide_off",
+    "stump_line_display": "Wide Outside Off",
+    "mean_speed_px_per_s": 1449.0,
+    "estimated_speed_kmh": 152.0,
+    "speed_release_kmh": 152.0,
+    "speed_release_mph": 94.4,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064550_000139",
+    "delivery_idx": 9,
+    "candidate_time_s": 43.4833,
+    "points": [
+      {
+        "frame_idx": 2612,
+        "time_s": 43.5333,
+        "x": 700.0,
+        "y": 135.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 2614,
+        "time_s": 43.5667,
+        "x": 720.8,
+        "y": 178.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2616,
+        "time_s": 43.6,
+        "x": 741.5,
+        "y": 220.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2618,
+        "time_s": 43.6333,
+        "x": 762.2,
+        "y": 260.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2620,
+        "time_s": 43.6667,
+        "x": 783.0,
+        "y": 299.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2622,
+        "time_s": 43.7,
+        "x": 803.8,
+        "y": 336.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2624,
+        "time_s": 43.7333,
+        "x": 824.5,
+        "y": 372.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2626,
+        "time_s": 43.7667,
+        "x": 845.2,
+        "y": 406.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2628,
+        "time_s": 43.8,
+        "x": 866.0,
+        "y": 439.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 2630,
+        "time_s": 43.8333,
+        "x": 872.6,
+        "y": 456.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2632,
+        "time_s": 43.8667,
+        "x": 879.2,
+        "y": 473.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2634,
+        "time_s": 43.9,
+        "x": 885.8,
+        "y": 490.6,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2636,
+        "time_s": 43.9333,
+        "x": 892.4,
+        "y": 507.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 2638,
+        "time_s": 43.9667,
+        "x": 899.0,
+        "y": 525.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 43.5333,
+    "t_bounce": 43.8,
+    "t_impact": 43.9667,
+    "bounce_x": 866.0,
+    "bounce_y": 439.0,
+    "length_classification": "good_length",
+    "line_classification": "leg",
+    "stump_line": "leg_stump",
+    "stump_line_display": "Leg Stump",
+    "mean_speed_px_per_s": 1012.3,
+    "estimated_speed_kmh": 110.3,
+    "speed_release_kmh": 110.3,
+    "speed_release_mph": 68.5,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064650_000140",
+    "delivery_idx": 10,
+    "candidate_time_s": 18.75,
+    "points": [
+      {
+        "frame_idx": 1129,
+        "time_s": 18.8167,
+        "x": 726.0,
+        "y": 196.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 1131,
+        "time_s": 18.85,
+        "x": 749.7,
+        "y": 244.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1133,
+        "time_s": 18.8833,
+        "x": 773.3,
+        "y": 290.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1135,
+        "time_s": 18.9167,
+        "x": 797.0,
+        "y": 334.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1137,
+        "time_s": 18.95,
+        "x": 820.7,
+        "y": 375.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1139,
+        "time_s": 18.9833,
+        "x": 844.3,
+        "y": 415.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1141,
+        "time_s": 19.0167,
+        "x": 868.0,
+        "y": 452.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 1143,
+        "time_s": 19.05,
+        "x": 871.0,
+        "y": 470.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1145,
+        "time_s": 19.0833,
+        "x": 874.0,
+        "y": 488.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1147,
+        "time_s": 19.1167,
+        "x": 877.0,
+        "y": 506.6,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1149,
+        "time_s": 19.15,
+        "x": 880.0,
+        "y": 524.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1151,
+        "time_s": 19.1833,
+        "x": 883.0,
+        "y": 543.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 18.8167,
+    "t_bounce": 19.0167,
+    "t_impact": 19.1833,
+    "bounce_x": 868.0,
+    "bounce_y": 452.0,
+    "length_classification": "good_length",
+    "line_classification": "off",
+    "stump_line": "outside_off",
+    "stump_line_display": "Outside Off",
+    "mean_speed_px_per_s": 1050.7,
+    "estimated_speed_kmh": 116.0,
+    "speed_release_kmh": 116.0,
+    "speed_release_mph": 72.1,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064750_000141",
+    "delivery_idx": 11,
+    "candidate_time_s": 55.3833,
+    "points": [
+      {
+        "frame_idx": 3326,
+        "time_s": 55.4333,
+        "x": 718.0,
+        "y": 200.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 3328,
+        "time_s": 55.4667,
+        "x": 734.7,
+        "y": 243.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3330,
+        "time_s": 55.5,
+        "x": 751.4,
+        "y": 284.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3332,
+        "time_s": 55.5333,
+        "x": 768.1,
+        "y": 324.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3334,
+        "time_s": 55.5667,
+        "x": 784.9,
+        "y": 362.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3336,
+        "time_s": 55.6,
+        "x": 801.6,
+        "y": 398.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3338,
+        "time_s": 55.6333,
+        "x": 818.3,
+        "y": 433.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3340,
+        "time_s": 55.6667,
+        "x": 835.0,
+        "y": 466.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 3341,
+        "time_s": 55.6833,
+        "x": 840.0,
+        "y": 479.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3342,
+        "time_s": 55.7,
+        "x": 845.0,
+        "y": 493.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3343,
+        "time_s": 55.7167,
+        "x": 850.0,
+        "y": 506.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3344,
+        "time_s": 55.7333,
+        "x": 855.0,
+        "y": 520.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 55.4333,
+    "t_bounce": 55.6667,
+    "t_impact": 55.7333,
+    "bounce_x": 835.0,
+    "bounce_y": 466.0,
+    "length_classification": "full",
+    "line_classification": "off",
+    "stump_line": "outside_off",
+    "stump_line_display": "Outside Off",
+    "mean_speed_px_per_s": 1161.2,
+    "estimated_speed_kmh": 130.7,
+    "speed_release_kmh": 130.7,
+    "speed_release_mph": 81.2,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064850_000142",
+    "delivery_idx": 12,
+    "candidate_time_s": 24.0833,
+    "points": [
+      {
+        "frame_idx": 1443,
+        "time_s": 24.05,
+        "x": 660.0,
+        "y": 220.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 1444,
+        "time_s": 24.0667,
+        "x": 670.2,
+        "y": 247.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1445,
+        "time_s": 24.0833,
+        "x": 680.4,
+        "y": 274.9,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1446,
+        "time_s": 24.1,
+        "x": 690.5,
+        "y": 301.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1447,
+        "time_s": 24.1167,
+        "x": 700.7,
+        "y": 327.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1448,
+        "time_s": 24.1333,
+        "x": 710.9,
+        "y": 352.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1449,
+        "time_s": 24.15,
+        "x": 721.1,
+        "y": 376.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1450,
+        "time_s": 24.1667,
+        "x": 731.3,
+        "y": 399.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1451,
+        "time_s": 24.1833,
+        "x": 741.5,
+        "y": 422.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1452,
+        "time_s": 24.2,
+        "x": 751.6,
+        "y": 444.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1453,
+        "time_s": 24.2167,
+        "x": 761.8,
+        "y": 466.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1454,
+        "time_s": 24.2333,
+        "x": 772.0,
+        "y": 487.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 1455,
+        "time_s": 24.25,
+        "x": 776.7,
+        "y": 496.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1456,
+        "time_s": 24.2667,
+        "x": 781.3,
+        "y": 506.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1457,
+        "time_s": 24.2833,
+        "x": 786.0,
+        "y": 516.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1458,
+        "time_s": 24.3,
+        "x": 790.7,
+        "y": 525.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1459,
+        "time_s": 24.3167,
+        "x": 795.3,
+        "y": 535.3,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 1460,
+        "time_s": 24.3333,
+        "x": 800.0,
+        "y": 545.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 24.05,
+    "t_bounce": 24.2333,
+    "t_impact": 24.3333,
+    "bounce_x": 772.0,
+    "bounce_y": 487.0,
+    "length_classification": "yorker",
+    "line_classification": "off",
+    "stump_line": "wide_off",
+    "stump_line_display": "Wide Outside Off",
+    "mean_speed_px_per_s": 1249.9,
+    "estimated_speed_kmh": 140.6,
+    "speed_release_kmh": 140.6,
+    "speed_release_mph": 87.4,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  },
+  {
+    "clip_id": "20220102064850_000142",
+    "delivery_idx": 13,
+    "candidate_time_s": 55.25,
+    "points": [
+      {
+        "frame_idx": 3307,
+        "time_s": 55.1167,
+        "x": 685.0,
+        "y": 220.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 3308,
+        "time_s": 55.1333,
+        "x": 694.5,
+        "y": 245.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3309,
+        "time_s": 55.15,
+        "x": 703.9,
+        "y": 271.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3310,
+        "time_s": 55.1667,
+        "x": 713.4,
+        "y": 295.5,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3311,
+        "time_s": 55.1833,
+        "x": 722.8,
+        "y": 319.4,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3312,
+        "time_s": 55.2,
+        "x": 732.3,
+        "y": 342.6,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3313,
+        "time_s": 55.2167,
+        "x": 741.7,
+        "y": 365.1,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3314,
+        "time_s": 55.2333,
+        "x": 751.2,
+        "y": 387.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3315,
+        "time_s": 55.25,
+        "x": 760.6,
+        "y": 408.2,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3316,
+        "time_s": 55.2667,
+        "x": 770.1,
+        "y": 428.8,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3317,
+        "time_s": 55.2833,
+        "x": 779.5,
+        "y": 448.7,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3318,
+        "time_s": 55.3,
+        "x": 789.0,
+        "y": 468.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      },
+      {
+        "frame_idx": 3319,
+        "time_s": 55.3167,
+        "x": 793.3,
+        "y": 480.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3320,
+        "time_s": 55.3333,
+        "x": 797.7,
+        "y": 492.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3321,
+        "time_s": 55.35,
+        "x": 802.0,
+        "y": 504.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3322,
+        "time_s": 55.3667,
+        "x": 806.3,
+        "y": 516.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3323,
+        "time_s": 55.3833,
+        "x": 810.7,
+        "y": 528.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 0.95
+      },
+      {
+        "frame_idx": 3324,
+        "time_s": 55.4,
+        "x": 815.0,
+        "y": 540.0,
+        "radius": 5.0,
+        "area": 25.0,
+        "confidence": 1.0
+      }
+    ],
+    "t_release": 55.1167,
+    "t_bounce": 55.3,
+    "t_impact": 55.4,
+    "bounce_x": 789.0,
+    "bounce_y": 468.0,
+    "length_classification": "full",
+    "line_classification": "off",
+    "stump_line": "wide_off",
+    "stump_line_display": "Wide Outside Off",
+    "mean_speed_px_per_s": 1220.0,
+    "estimated_speed_kmh": 138.5,
+    "speed_release_kmh": 138.5,
+    "speed_release_mph": 86.1,
+    "drs_decision": "NOT OUT",
+    "drs_wickets": "Missing",
+    "is_valid": true
+  }
+]

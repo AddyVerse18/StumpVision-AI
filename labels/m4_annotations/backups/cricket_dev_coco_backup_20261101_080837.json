@@ -1,0 +1,591 @@
+{
+  "info": {
+    "year": 2026,
+    "version": "1.0",
+    "description": "StumpVision M4 Cricket Dataset [DEV split]",
+    "contributor": "StumpVision AI",
+    "date_created": "2026-10-30T22:08:34.890845"
+  },
+  "licenses": [
+    {
+      "id": 1,
+      "name": "Proprietary / Confidential",
+      "url": ""
+    }
+  ],
+  "images": [
+    {
+      "id": 1,
+      "file_name": "20220102063650_000130_f000650.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063650_000130",
+      "frame_index": 650,
+      "time_s": 10.8333,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 2,
+      "file_name": "20220102063650_000130_f000665.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063650_000130",
+      "frame_index": 665,
+      "time_s": 11.0833,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 3,
+      "file_name": "20220102063650_000130_f000680.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063650_000130",
+      "frame_index": 680,
+      "time_s": 11.3333,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 4,
+      "file_name": "20220102063650_000130_f002069.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063650_000130",
+      "frame_index": 2069,
+      "time_s": 34.4833,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 5,
+      "file_name": "20220102063650_000130_f002084.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063650_000130",
+      "frame_index": 2084,
+      "time_s": 34.7333,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 6,
+      "file_name": "20220102063650_000130_f002099.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063650_000130",
+      "frame_index": 2099,
+      "time_s": 34.9833,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 7,
+      "file_name": "20220102063650_000130_f003246.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063650_000130",
+      "frame_index": 3246,
+      "time_s": 54.1,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 8,
+      "file_name": "20220102063650_000130_f003261.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063650_000130",
+      "frame_index": 3261,
+      "time_s": 54.35,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 9,
+      "file_name": "20220102063650_000130_f003276.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063650_000130",
+      "frame_index": 3276,
+      "time_s": 54.6,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 10,
+      "file_name": "20220102063750_000131_f000600.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063750_000131",
+      "frame_index": 600,
+      "time_s": 10.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 11,
+      "file_name": "20220102063750_000131_f001800.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063750_000131",
+      "frame_index": 1800,
+      "time_s": 30.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 12,
+      "file_name": "20220102063750_000131_f003000.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063750_000131",
+      "frame_index": 3000,
+      "time_s": 50.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 13,
+      "file_name": "20220102063850_000132_f000600.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063850_000132",
+      "frame_index": 600,
+      "time_s": 10.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 14,
+      "file_name": "20220102063850_000132_f001800.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063850_000132",
+      "frame_index": 1800,
+      "time_s": 30.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 15,
+      "file_name": "20220102063850_000132_f003000.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063850_000132",
+      "frame_index": 3000,
+      "time_s": 50.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 16,
+      "file_name": "20220102063950_000133_f000600.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063950_000133",
+      "frame_index": 600,
+      "time_s": 10.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 17,
+      "file_name": "20220102063950_000133_f001800.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063950_000133",
+      "frame_index": 1800,
+      "time_s": 30.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 18,
+      "file_name": "20220102063950_000133_f003000.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102063950_000133",
+      "frame_index": 3000,
+      "time_s": 50.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 19,
+      "file_name": "20220102064050_000134_f000600.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064050_000134",
+      "frame_index": 600,
+      "time_s": 10.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 20,
+      "file_name": "20220102064050_000134_f001800.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064050_000134",
+      "frame_index": 1800,
+      "time_s": 30.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 21,
+      "file_name": "20220102064050_000134_f003000.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064050_000134",
+      "frame_index": 3000,
+      "time_s": 50.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 22,
+      "file_name": "20220102064150_000135_f000600.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064150_000135",
+      "frame_index": 600,
+      "time_s": 10.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 23,
+      "file_name": "20220102064150_000135_f001800.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064150_000135",
+      "frame_index": 1800,
+      "time_s": 30.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 24,
+      "file_name": "20220102064150_000135_f003000.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064150_000135",
+      "frame_index": 3000,
+      "time_s": 50.0,
+      "sample_type": "idle_scene"
+    },
+    {
+      "id": 25,
+      "file_name": "20220102064250_000136_f002889.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064250_000136",
+      "frame_index": 2889,
+      "time_s": 48.15,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 26,
+      "file_name": "20220102064250_000136_f002904.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064250_000136",
+      "frame_index": 2904,
+      "time_s": 48.4,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 27,
+      "file_name": "20220102064250_000136_f002919.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064250_000136",
+      "frame_index": 2919,
+      "time_s": 48.65,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 28,
+      "file_name": "20220102064350_000137_f001012.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064350_000137",
+      "frame_index": 1012,
+      "time_s": 16.8667,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 29,
+      "file_name": "20220102064350_000137_f001027.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064350_000137",
+      "frame_index": 1027,
+      "time_s": 17.1167,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 30,
+      "file_name": "20220102064350_000137_f001042.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064350_000137",
+      "frame_index": 1042,
+      "time_s": 17.3667,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 31,
+      "file_name": "20220102064350_000137_f003488.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064350_000137",
+      "frame_index": 3488,
+      "time_s": 58.1333,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 32,
+      "file_name": "20220102064350_000137_f003503.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064350_000137",
+      "frame_index": 3503,
+      "time_s": 58.3833,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 33,
+      "file_name": "20220102064350_000137_f003518.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064350_000137",
+      "frame_index": 3518,
+      "time_s": 58.6333,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 34,
+      "file_name": "20220102064450_000138_f001792.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064450_000138",
+      "frame_index": 1792,
+      "time_s": 29.8667,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 35,
+      "file_name": "20220102064450_000138_f001807.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064450_000138",
+      "frame_index": 1807,
+      "time_s": 30.1167,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 36,
+      "file_name": "20220102064450_000138_f001822.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064450_000138",
+      "frame_index": 1822,
+      "time_s": 30.3667,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 37,
+      "file_name": "20220102064550_000139_f000118.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064550_000139",
+      "frame_index": 118,
+      "time_s": 1.9667,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 38,
+      "file_name": "20220102064550_000139_f000133.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064550_000139",
+      "frame_index": 133,
+      "time_s": 2.2167,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 39,
+      "file_name": "20220102064550_000139_f000148.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064550_000139",
+      "frame_index": 148,
+      "time_s": 2.4667,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 40,
+      "file_name": "20220102064550_000139_f002598.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064550_000139",
+      "frame_index": 2598,
+      "time_s": 43.3,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 41,
+      "file_name": "20220102064550_000139_f002613.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064550_000139",
+      "frame_index": 2613,
+      "time_s": 43.55,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 42,
+      "file_name": "20220102064550_000139_f002628.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064550_000139",
+      "frame_index": 2628,
+      "time_s": 43.8,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 43,
+      "file_name": "20220102064650_000140_f001113.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064650_000140",
+      "frame_index": 1113,
+      "time_s": 18.55,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 44,
+      "file_name": "20220102064650_000140_f001128.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064650_000140",
+      "frame_index": 1128,
+      "time_s": 18.8,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 45,
+      "file_name": "20220102064650_000140_f001143.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064650_000140",
+      "frame_index": 1143,
+      "time_s": 19.05,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 46,
+      "file_name": "20220102064750_000141_f003306.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064750_000141",
+      "frame_index": 3306,
+      "time_s": 55.1,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 47,
+      "file_name": "20220102064750_000141_f003321.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064750_000141",
+      "frame_index": 3321,
+      "time_s": 55.35,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 48,
+      "file_name": "20220102064750_000141_f003336.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064750_000141",
+      "frame_index": 3336,
+      "time_s": 55.6,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 49,
+      "file_name": "20220102064850_000142_f001428.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064850_000142",
+      "frame_index": 1428,
+      "time_s": 23.8,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 50,
+      "file_name": "20220102064850_000142_f001443.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064850_000142",
+      "frame_index": 1443,
+      "time_s": 24.05,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 51,
+      "file_name": "20220102064850_000142_f001458.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064850_000142",
+      "frame_index": 1458,
+      "time_s": 24.3,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 52,
+      "file_name": "20220102064850_000142_f003292.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064850_000142",
+      "frame_index": 3292,
+      "time_s": 54.8667,
+      "sample_type": "delivery_stride"
+    },
+    {
+      "id": 53,
+      "file_name": "20220102064850_000142_f003307.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064850_000142",
+      "frame_index": 3307,
+      "time_s": 55.1167,
+      "sample_type": "delivery_peak"
+    },
+    {
+      "id": 54,
+      "file_name": "20220102064850_000142_f003322.jpg",
+      "width": 1920,
+      "height": 1080,
+      "clip_id": "20220102064850_000142",
+      "frame_index": 3322,
+      "time_s": 55.3667,
+      "sample_type": "delivery_stride"
+    }
+  ],
+  "annotations": [],
+  "categories": [
+    {
+      "id": 1,
+      "name": "person",
+      "supercategory": "cricket"
+    },
+    {
+      "id": 2,
+      "name": "stumps",
+      "supercategory": "cricket"
+    },
+    {
+      "id": 3,
+      "name": "pitch",
+      "supercategory": "cricket"
+    },
+    {
+      "id": 4,
+      "name": "crease",
+      "supercategory": "cricket"
+    },
+    {
+      "id": 5,
+      "name": "bat",
+      "supercategory": "cricket"
+    },
+    {
+      "id": 6,
+      "name": "ball",
+      "supercategory": "cricket"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+# Python Virtual Environments & Packages
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Pytest, Coverage & Type Checkers
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Scratch / Working Scripts
+scratch/
+
+# Large Video Footage & Heavy ML Model Weights (>100MB exceeds GitHub limits)
+# Note: Lightweight annotated clips in outputs/trajectories/clips/ (<5MB each) are tracked for demo playback
+*.mp4.tmp
+*.pth
+*.pt
+*.onnx
+*.bin
+screen_rec_frames/
+D:/Computer Vision Projects/StumpEye_Footage/

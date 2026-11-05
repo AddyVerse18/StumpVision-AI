@@ -1,0 +1,25 @@
+{
+  "timestamp_utc": "2026-10-30T16:10:45.113114+00:00",
+  "method_version": "m3_motion_baseline_v1",
+  "split": "dev",
+  "primary_tolerance_s": 0.5,
+  "secondary_tolerance_s": 1.0,
+  "reviewed_clips_count": 13,
+  "unreviewed_clips_count": 0,
+  "file_hashes": {
+    "manifest_sha256": "7c1b2a5bc1538067fcc4fd89ecf795993258c38ca7112a68ff3f06944707cdad",
+    "labels_sha256": "26d9e3a2a9df0ea8ef77527389554e0c309248ea7386bedb4fb730dc2cd476d9",
+    "clip_status_sha256": "4004d0bb17a17e5767b9bd87d1c7fb5260ee45598d73ecf06985460f33b28670",
+    "predictions_sha256": "3939ef2860194c84c349deb1194bd637b70b55a2b95fda22259e3e825d97f220"
+  },
+  "bootstrap_seed": 42,
+  "environment": {
+    "python_version": "3.13.7",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.0",
+    "opencv": "5.0.0",
+    "pyyaml": "6.0.3"
+  }
+}

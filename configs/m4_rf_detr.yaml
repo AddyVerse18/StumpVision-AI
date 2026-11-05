@@ -1,0 +1,80 @@
+# StumpVision M4 Configuration: RF-DETR Cricket Object Detection
+schema_version: "1.0"
+
+# External footage location
+data_dir: "D:/Computer Vision Projects/StumpEye_Footage"
+
+# Split & Label Source Files
+manifest_path: "labels/manifest.csv"
+labels_path: "labels/labels.csv"
+status_path: "labels/clip_status.csv"
+target_split: "dev"
+
+# Target Detection Categories
+categories:
+  - id: 1
+    name: "person"
+    supercategory: "cricket"
+  - id: 2
+    name: "stumps"
+    supercategory: "cricket"
+  - id: 3
+    name: "pitch"
+    supercategory: "cricket"
+  - id: 4
+    name: "crease"
+    supercategory: "cricket"
+  - id: 5
+    name: "bat"
+    supercategory: "cricket"
+  - id: 6
+    name: "ball"
+    supercategory: "cricket"
+
+# Keyframe Extraction Settings
+frame_extraction:
+  # Output folder name relative to data_dir (ensures zero media in project repo)
+  frames_dirname: "m4_frames"
+  # Index manifest for extracted frames
+  index_manifest: "labels/m4_extracted_frames.csv"
+  # Output COCO annotations JSON path
+  coco_annotations: "labels/m4_annotations/cricket_dev_coco.json"
+  # Delivery temporal offsets (seconds around delivery point)
+  delivery_offsets_s: [-0.25, 0.0, 0.25]
+  # Sample interval in seconds for idle / distractor scenes
+  idle_interval_s: 20.0
+  # Image format & quality
+  jpeg_quality: 95
+
+# Model & Training Specification (for Colab GPU workflow)
+model:
+  framework: "rf-detr"
+  backbone: "hgnetv2"
+  image_size: 640
+  batch_size: 8
+  num_workers: 2
+  learning_rate: 0.0001
+  epochs: 30
+  confidence_threshold: 0.5
+
+# Batsman Pose & Biomechanical Stance Gating (Camera 1 Calibrated)
+batsman_pose:
+  crease_roi:
+    x_min: 0.44  # ~845 px at 1920x1080
+    x_max: 0.50  # ~960 px
+    y_min: 0.45  # ~486 px
+    y_max: 0.52  # ~562 px
+  biomechanics:
+    knee_angle_max_deg: 168.0     # Crouch stance flexion threshold
+    wrist_distance_max_px: 35.0   # Hands grouped on bat handle
+    leg_confidence_min: 0.20      # Joint visibility filter
+
+# Multimodal Motion + Pose Fusion Settings
+fusion:
+  method_version: "m4_fused_candidates_v1"
+  max_pose_distance_s: 1.0        # Temporal match window between peak and pose
+  score_boost: 1.1                # Score multiplier for confirmed batsman
+  min_score: 0.1                  # Minimum candidate score threshold
+  predictions_output: "outputs/predictions/m4_fused_candidates_dev.csv"
+
+

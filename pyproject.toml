@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stumpvision"
+version = "0.1.0"
+description = "StumpVision AI Delivery Finder"
+authors = [{ name = "StumpVision Team" }]
+readme = "docs/PLAN.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy",
+    "opencv-python",
+    "pandas",
+    "scipy",
+    "PyYAML",
+    "pytest",
+    "streamlit",
+]
+
+[project.scripts]
+stumpvision = "stumpvision.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
