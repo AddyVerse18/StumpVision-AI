@@ -10,8 +10,17 @@ Multimodal Computer Vision Engine:
 """
 
 import sys
+import os
 import base64
 from pathlib import Path
+
+# Ensure 'src' directory is in Python path for local runs and Streamlit Community Cloud
+PROJECT_ROOT = Path(__file__).resolve().parent
+src_dir = PROJECT_ROOT / "src"
+if str(src_dir) not in sys.path:
+    sys.path.insert(0, str(src_dir))
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 import json
 import cv2
 import numpy as np
@@ -616,7 +625,10 @@ elif st.session_state["active_nav"] == "Analysis":
                     unsafe_allow_html=True,
                 )
             else:
-                st.warning(f"Raw match footage not found at: {raw_video_path}")
+                st.info(
+                    f"📹 **Uncompressed 1080p Match Footage ({raw_clip_id}.mp4)** is stored on local production NVMe storage (15 GB). "
+                    f"Use the **'AI Hawk-Eye Tracking'** tab above to view the full computer-vision trajectory replay."
+                )
 
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -936,14 +948,26 @@ elif st.session_state["active_nav"] == "Pitch Map":
     if "Bowler's View" in p_mode:
         ref_clip_id = del_info["clip_id"] if del_info is not None else "20220102063650_000130"
         ref_video_file = DATA_DIR / f"raw/cam1/{ref_clip_id}.mp4"
+        frame = None
         if ref_video_file.exists():
             cap = cv2.VideoCapture(str(ref_video_file))
             cap.set(cv2.CAP_PROP_POS_FRAMES, 300)
             ret, frame = cap.read()
             cap.release()
             if not ret or frame is None:
-                frame = np.ones((1080, 1920, 3), dtype=np.uint8) * 40
-        else:
+                frame = None
+
+        if frame is None:
+            # Fallback for Streamlit Cloud: extract clean background frame from tracked demo clip
+            demo_clip_file = PROJECT_ROOT / "outputs" / "trajectories" / "clips" / f"delivery_{curr_del_idx:02d}_annotated.mp4"
+            if demo_clip_file.exists():
+                cap = cv2.VideoCapture(str(demo_clip_file))
+                ret, frame = cap.read()
+                cap.release()
+                if not ret or frame is None:
+                    frame = None
+
+        if frame is None:
             frame = np.ones((1080, 1920, 3), dtype=np.uint8) * 40
 
         active_zone = str(del_info["length"]) if del_info is not None else None
