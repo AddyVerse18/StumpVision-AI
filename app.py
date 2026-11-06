@@ -76,16 +76,34 @@ from stumpvision.trajectory.drs import (
 )
 from stumpvision.trajectory.beehive import render_beehive_chart
 
-# Paths
+# Paths & Asset Directories
 PROJECT_ROOT = Path(__file__).resolve().parent
+ASSETS_DIR = PROJECT_ROOT / "assets"
+ASSETS_DIR.mkdir(parents=True, exist_ok=True)
 DATA_DIR = Path("D:/Computer Vision Projects/StumpEye_Footage")
 TRAJ_JSON_PATH = PROJECT_ROOT / "outputs" / "trajectories" / "dev_trajectories.json"
 TRAJ_CSV_PATH = PROJECT_ROOT / "outputs" / "trajectories" / "dev_trajectories_summary.csv"
 
+# Detect custom StumpEye logo in assets/ directory
+logo_file = None
+for candidate in ["logo.png", "logo.svg", "logo.jpg", "logo.jpeg", "stumpeye_logo.png", "stumpeye_logo.svg", "StumpEye_logo.png", "StumpEye.png"]:
+    p = ASSETS_DIR / candidate
+    if p.exists():
+        logo_file = p
+        break
+
+logo_b64 = None
+logo_mime = None
+if logo_file:
+    with open(logo_file, "rb") as lf:
+        logo_b64 = base64.b64encode(lf.read()).decode("utf-8")
+    ext = logo_file.suffix.lstrip(".").lower()
+    logo_mime = "image/svg+xml" if ext == "svg" else ("image/jpeg" if ext in ["jpg", "jpeg"] else f"image/{ext}")
+
 # Streamlit Page Config
 st.set_page_config(
-    page_title="StumpVision AI — Cricket Video Analysis",
-    page_icon="🏏",
+    page_title="StumpEye — Cricket Video Analysis",
+    page_icon="🏏" if not logo_file else str(logo_file),
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -365,10 +383,42 @@ st.markdown(
         object-fit: contain !important;
     }
 
-    /* Streamlit Default Cleanup */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
+    /* Streamlit Default Cleanup & Sidebar Toggle Visibility */
+    #MainMenu { visibility: hidden !important; }
+    footer { visibility: hidden !important; }
+    
+    header[data-testid="stHeader"] {
+        background-color: transparent !important;
+        height: 2.85rem !important;
+        z-index: 999990 !important;
+    }
+    
+    /* Ensure the sidebar toggle / collapsed control is ALWAYS visible and styled */
+    div[data-testid="stSidebarCollapsedControl"],
+    button[data-testid="stSidebarCollapsedControl"] {
+        visibility: visible !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background-color: #141724 !important;
+        border: 1px solid rgba(255, 255, 255, 0.18) !important;
+        border-radius: 8px !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+        margin-left: 10px !important;
+        margin-top: 6px !important;
+        padding: 5px 9px !important;
+        opacity: 1 !important;
+        z-index: 999999 !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+    }
+    button[data-testid="stSidebarCollapsedControl"]:hover {
+        background-color: #7c3aed !important;
+        border-color: rgba(168, 85, 247, 0.6) !important;
+        color: #ffffff !important;
+        transform: scale(1.06);
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -515,11 +565,16 @@ drs = evaluate_drs(traj_record if traj_record else del_info)
 # ---------------------------------------------------------------------------
 # Sidebar Navigation (Clean Menu: Analysis, Pitch Map, Video Library)
 # ---------------------------------------------------------------------------
+if logo_b64:
+    brand_logo_markup = f'<img src="data:{logo_mime};base64,{logo_b64}" alt="StumpEye Logo" style="height: 38px; width: auto; object-fit: contain; margin-right: 10px; border-radius: 6px;" />'
+else:
+    brand_logo_markup = '<div class="sv-brand-icon">🏏</div>'
+
 st.sidebar.markdown(
-    """
+    f"""
     <div class="sv-brand">
-        <div class="sv-brand-icon">🏏</div>
-        <div class="sv-brand-title">STUMPVISION <span>AI</span></div>
+        {brand_logo_markup}
+        <div class="sv-brand-title">StumpEye</div>
     </div>
     """,
     unsafe_allow_html=True,
@@ -571,13 +626,18 @@ for label, icon, nav_key in system_menu_items:
 # ---------------------------------------------------------------------------
 # Top Page Broadcast Header
 # ---------------------------------------------------------------------------
+header_logo_html = f'<img src="data:{logo_mime};base64,{logo_b64}" alt="StumpEye" style="height: 44px; width: auto; object-fit: contain; margin-right: 12px; border-radius: 6px;" />' if logo_b64 else '<div class="sv-brand-icon" style="margin-right: 12px;">🏏</div>'
+
 head_col_left, head_col_right = st.columns([3.5, 1.2])
 with head_col_left:
     st.markdown(
-        """
-        <div>
-            <div class="sv-header-title">Cricket Video Analysis</div>
-            <div class="sv-header-sub">Object Detection &bull; Ball Tracking &bull; Delivery Analytics</div>
+        f"""
+        <div style="display: flex; align-items: center;">
+            {header_logo_html}
+            <div>
+                <div class="sv-header-title">StumpEye <span style="font-size: 1.05rem; font-weight: 500; color: #94a3b8;">&bull; Cricket Video Analysis</span></div>
+                <div class="sv-header-sub">Object Detection &bull; Ball Tracking &bull; Delivery Analytics</div>
+            </div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -604,16 +664,16 @@ if st.session_state["active_nav"] == "Settings":
       - Leg Stump: 907.0 px
       - Popping Crease: 540.0 px (1.22 m from stumps)
       - Wide Off Line: 858.7 px
-    - **Hawk-Eye DRS Engine:** ICC / MCC Law 36 standard 3-zone arbitration (Pitching, Impact, Wickets).
+    - **StumpEye DRS Engine:** ICC / MCC Law 36 standard 3-zone arbitration (Pitching, Impact, Wickets).
     """)
     st.markdown('</div>', unsafe_allow_html=True)
 
 elif st.session_state["active_nav"] == "About":
     st.markdown('<div class="sv-card">', unsafe_allow_html=True)
-    st.markdown('<div class="sv-card-header">ℹ️ About StumpVision AI</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sv-card-header">ℹ️ About StumpEye</div>', unsafe_allow_html=True)
     st.markdown("""
-    StumpVision AI is an enterprise-grade cricket broadcast intelligence system designed for real-time delivery tracking, 
-    pitch bounce localization, biomechanical batsman gating, and virtual Hawk-Eye DRS adjudication.
+    StumpEye is an enterprise-grade cricket broadcast intelligence system designed for real-time delivery tracking, 
+    pitch bounce localization, biomechanical batsman gating, and virtual StumpEye DRS adjudication.
     
     Built with modular computer vision pipelines:
     - **M3:** Spatio-temporal motion energy detection
@@ -666,7 +726,7 @@ elif st.session_state["active_nav"] == "Analysis":
                 )
 
         tab_ai, tab_raw = st.tabs([
-            "🎯 AI Trajectory Replay (60 FPS)",
+            "🎯 StumpEye Ball Tracking (60 FPS)",
             "📹 Match Broadcast Footage (1-Min Clip)",
         ])
 
@@ -677,7 +737,7 @@ elif st.session_state["active_nav"] == "Analysis":
                 st.markdown(
                     f"""
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px; font-size: 0.82rem; color: #94a3b8; padding: 2px 4px;">
-                        <span>⚡ <strong>60 FPS Hawk-Eye Ball Tracking</strong> (Flight Arc • Pitch Target • Radar HUD)</span>
+                        <span>⚡ <strong>60 FPS StumpEye Ball Tracking</strong> (Flight Arc • Pitch Target • Radar HUD)</span>
                         <span style="color: #a855f7; font-weight: 700;">Speed: {drs.speed_release_kmh:.1f} km/h</span>
                     </div>
                     """,
@@ -711,7 +771,7 @@ elif st.session_state["active_nav"] == "Analysis":
             else:
                 st.info(
                     f"📹 **1-Min Match Footage ({raw_clip_id}.mp4)** is loading. "
-                    f"Use the **'AI Hawk-Eye Tracking'** tab above to view the full computer-vision trajectory replay."
+                    f"Use the **'StumpEye Ball Tracking'** tab above to view the full computer-vision trajectory replay."
                 )
 
         st.markdown('</div>', unsafe_allow_html=True)
@@ -1030,7 +1090,7 @@ elif st.session_state["active_nav"] == "Pitch Map":
 
     p_mode = st.radio(
         "Select Pitch Map Mode:",
-        ["🎯 Bowler's View Perspective Pitch Map (Actual Footage Calibration)", "🐝 Striker Crease Beehive (Hawk-Eye Front-On View)", "🗺️ 2D Aerial Pitch Diagram"],
+        ["🎯 Bowler's View Perspective Pitch Map (Actual Footage Calibration)", "🐝 Striker Crease Beehive (Front-On Stumps View)", "🗺️ 2D Aerial Pitch Diagram"],
         horizontal=True,
     )
 

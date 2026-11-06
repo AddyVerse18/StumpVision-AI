@@ -365,7 +365,7 @@ def render_drs_broadcast_card(
     # Header
     cv2.putText(
         card,
-        "HAWK-EYE DRS — LBW BALL TRACKING & WICKETS PROJECTOR",
+        "STUMPEYE DRS — LBW BALL TRACKING & WICKETS PROJECTOR",
         (22, 30),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.58,

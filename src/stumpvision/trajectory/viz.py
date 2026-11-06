@@ -531,7 +531,7 @@ def render_trajectory_on_frame(
         info1 = f"Pitch Length:  {trajectory.length_classification.replace('_', ' ').title()}"
         info2 = f"Stump Line:    {stump_line_str}"
         info3 = f"Radar Speed:   {drs.speed_release_kmh:.1f} km/h ({drs.speed_release_mph:.1f} mph)"
-        info4 = f"Hawk-Eye LBW:  {drs.decision} ({drs.wickets_display})"
+        info4 = f"StumpEye LBW:  {drs.decision} ({drs.wickets_display})"
 
         cv2.putText(canvas, title, (42, 56), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 255, 255), 2, cv2.LINE_AA)
         cv2.putText(canvas, info1, (42, 84), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 255, 255), 1, cv2.LINE_AA)
@@ -603,7 +603,7 @@ def draw_2d_pitch_map(
     cv2.line(canvas, (px1, y_short), (px2, y_short), (140, 170, 135), 1, cv2.LINE_AA)
 
     # Labels
-    cv2.putText(canvas, "STUMPVISION AI - 2D PITCH MAP", (125, 45), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2, cv2.LINE_AA)
+    cv2.putText(canvas, "STUMPEYE - 2D PITCH MAP", (180, 45), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2, cv2.LINE_AA)
     cv2.putText(canvas, "YORKER / FULL", (px1 + 8, popping_crease_y - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.42, (60, 90, 60), 1, cv2.LINE_AA)
     cv2.putText(canvas, "GOOD LENGTH", (px1 + 8, y_full - 30), cv2.FONT_HERSHEY_SIMPLEX, 0.42, (60, 90, 60), 1, cv2.LINE_AA)
     cv2.putText(canvas, "SHORT PITCH", (px1 + 8, y_good - 40), cv2.FONT_HERSHEY_SIMPLEX, 0.42, (60, 90, 60), 1, cv2.LINE_AA)
@@ -859,7 +859,7 @@ def render_delivery_video_clip(
         info1 = f"Pitch Length:  {trajectory.length_classification.replace('_', ' ').title()}"
         info2 = f"Stump Line:    {stump_line_display}"
         info3 = f"Radar Speed:   {drs.speed_release_kmh:.1f} km/h ({drs.speed_release_mph:.1f} mph)"
-        info4 = f"Hawk-Eye LBW:  {drs.decision} ({drs.wickets_display})"
+        info4 = f"StumpEye LBW:  {drs.decision} ({drs.wickets_display})"
 
         cv2.putText(frame, title, (45, 58), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 255, 255), 2, cv2.LINE_AA)
         cv2.putText(frame, info1, (45, 86), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 255, 255), 1, cv2.LINE_AA)
