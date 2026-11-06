@@ -50,3 +50,5 @@ scratch/
 *.bin
 screen_rec_frames/
 D:/Computer Vision Projects/StumpEye_Footage/
+outputs/uploads/
+outputs/test_access.log

@@ -567,6 +567,7 @@ def analyze_uploaded_footage(video_path: Path, clip_id: str, existing_max_del: i
             "drs_reason": drs.decision_reason,
             "arrival_height_cm": drs.arrival_height_cm,
         }
+        row["source_video_path"] = str(video_path)
         new_rows.append(row)
 
         traj_dict = traj.to_dict()
@@ -804,86 +805,233 @@ with head_col_left:
         unsafe_allow_html=True,
     )
 with head_col_right:
-    with st.popover("⬆ Upload Video", help="Analyze new cricket match video footage"):
-        st.markdown("##### 📹 Upload Cricket Match Footage")
-        uploaded_file = st.file_uploader(
-            "Select MP4 video (1080p / 60 FPS recommended):",
-            type=["mp4", "mov", "avi"],
-            key="match_video_uploader",
-        )
-        if uploaded_file is not None:
-            size_mb = uploaded_file.size / (1024 * 1024)
-            file_key = f"{uploaded_file.name}_{uploaded_file.size}"
-            is_processed = file_key in st.session_state["processed_uploads"]
+    with st.popover("⚡ Ingest Match Footage", help="Analyze new cricket match video footage"):
+        st.markdown("##### ⚡ StumpEye Ingestion & Automated Dead-Time Trimming")
 
-            # Real-time Telemetry & Upload Status Card
+        tab_stream, tab_file = st.tabs([
+            "🌐 Live Stream / Match Feed",
+            "📁 Upload MP4 File",
+        ])
+
+        with tab_stream:
             st.markdown(
-                f"""
-                <div style="background: rgba(139, 92, 246, 0.09); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 8px; padding: 10px 12px; margin: 8px 0 10px 0;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                        <span style="font-weight: 700; color: #ffffff; font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px;">
-                            🎥 {uploaded_file.name}
-                        </span>
-                        <span style="background: {'#22c55e' if is_processed else '#8b5cf6'}; color: #ffffff; font-size: 0.70rem; font-weight: 700; padding: 2px 7px; border-radius: 4px;">
-                            {'PROCESSED' if is_processed else 'UPLOADED'}
-                        </span>
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-size: 0.75rem; color: #94a3b8; font-family: monospace;">
-                        <div>📦 <strong>{size_mb:.1f} MB</strong></div>
-                        <div>⚡ <span style="color: #a855f7; font-weight: 600;">~28.4 MB/s</span></div>
-                        <div>⏱️ <span style="color: #38bdf8; font-weight: 600;">14 ms</span></div>
-                    </div>
+                """
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 8px;">
+                    Zero upload wait time & no file size limits. Select match feed or enter URL:
                 </div>
                 """,
                 unsafe_allow_html=True,
             )
 
-            if not is_processed:
-                prog_bar = st.progress(10, text="📥 Ingesting match footage buffer into memory...")
-                import time
-                time.sleep(0.2)
+            server_presets = [
+                ("Camera 1 Over (Clip 000134) - 3 Deliveries", "20220102064050_000134"),
+                ("Camera 1 Over (Clip 000135) - 3 Deliveries", "20220102064150_000135"),
+                ("Camera 1 Over (Clip 000130) - 3 Deliveries", "20220102063650_000130"),
+                ("Camera 1 Over (Clip 000136) - 2 Deliveries", "20220102064250_000136"),
+                ("Camera 1 Over (Clip 000137) - 2 Deliveries", "20220102064350_000137"),
+                ("Camera 1 Over (Clip 000138) - 1 Delivery",   "20220102064450_000138"),
+                ("Camera 1 Over (Clip 000139) - 2 Deliveries", "20220102064550_000139"),
+                ("Camera 1 Over (Clip 000140) - 1 Delivery",   "20220102064650_000140"),
+                ("Camera 1 Over (Clip 000141) - 2 Deliveries", "20220102064750_000141"),
+                ("Camera 1 Over (Clip 000142) - 2 Deliveries", "20220102064850_000142"),
+                ("🌐 Custom Stream / Video URL (Full Match)", "custom_url"),
+                ("💻 Local Disk File Path (Any Match Video / Size)", "local_path"),
+            ]
 
-                # Save raw video to outputs/uploads/
-                upload_dir = PROJECT_ROOT / "outputs" / "uploads"
-                upload_dir.mkdir(parents=True, exist_ok=True)
-                raw_dest_path = upload_dir / uploaded_file.name
-                with open(raw_dest_path, "wb") as f:
-                    f.write(uploaded_file.getbuffer())
+            selected_preset_label = st.selectbox(
+                "Select Match Camera Feed:",
+                options=[p[0] for p in server_presets],
+                key="stream_preset_select",
+            )
+            selected_preset_id = next(p[1] for p in server_presets if p[0] == selected_preset_label)
 
-                prog_bar.progress(30, text="⚡ Scanning 60 FPS motion & delivery release peaks...")
-
-                def update_progress(pct, msg):
-                    prog_bar.progress(int(pct * 100), text=f"🎯 {msg}")
-
-                clip_stem = Path(uploaded_file.name).stem
-                new_rows, new_trajs = analyze_uploaded_footage(
-                    video_path=raw_dest_path,
-                    clip_id=clip_stem,
-                    existing_max_del=max(all_match_del_ids) if all_match_del_ids else 13,
-                    progress_callback=update_progress,
+            custom_url_input = ""
+            local_path_input = ""
+            if selected_preset_id == "custom_url":
+                custom_url_input = st.text_input(
+                    "Enter Video / Stream URL:",
+                    placeholder="https://example.com/match_feed.mp4",
+                    key="custom_stream_url_input",
+                )
+            elif selected_preset_id == "local_path":
+                local_path_input = st.text_input(
+                    "Enter Local Video Path on Disk:",
+                    placeholder=r"D:\path\to\match_footage.mp4",
+                    key="custom_local_path_input",
                 )
 
-                prog_bar.progress(100, text="✅ Processing complete! Added to Delivery Insights.")
-                st.session_state["custom_summary_rows"].extend(new_rows)
-                st.session_state["custom_trajectories"].extend(new_trajs)
-                st.session_state["processed_uploads"].append(file_key)
+            st.markdown(
+                """
+                <div style="background: rgba(139, 92, 246, 0.08); border: 1px solid rgba(139, 92, 246, 0.25); border-radius: 6px; padding: 6px 10px; margin: 6px 0 10px 0; font-size: 0.74rem; color: #a855f7;">
+                    ⚡ <strong>Automated Trimmer</strong>: Detects bowler run-up peaks & crops active delivery windows.
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
 
-                if new_rows:
-                    first_new_del = int(new_rows[0]["delivery_idx"])
-                    st.session_state["master_del_select"] = first_new_del
-                    st.session_state["master_del_select_box"] = first_new_del
-                    st.toast(f"🎉 Added {len(new_rows)} deliveries to StumpEye Delivery Insights!", icon="🎯")
+            if st.button("⚡ Ingest & Extract Deliveries", type="primary", use_container_width=True, key="btn_ingest_stream"):
+                target_clip_id = selected_preset_id
+                target_video_path = None
 
-                time.sleep(0.4)
-                st.rerun()
-            else:
-                st.success("✅ Footage analyzed and active in Delivery Insights.")
-                if st.button("🔄 Re-analyze Footage", type="secondary", use_container_width=True):
-                    st.session_state["processed_uploads"].remove(file_key)
-                    clip_stem = Path(uploaded_file.name).stem
-                    st.session_state["custom_summary_rows"] = [r for r in st.session_state["custom_summary_rows"] if r.get("clip_id") != clip_stem]
-                    st.session_state["custom_trajectories"] = [t for t in st.session_state["custom_trajectories"] if t.get("clip_id") != clip_stem]
+                if selected_preset_id == "custom_url":
+                    if not custom_url_input:
+                        st.error("Please enter a valid video stream URL.")
+                    else:
+                        target_clip_id = "custom_match_stream"
+                        import urllib.request
+                        upload_dir = PROJECT_ROOT / "outputs" / "uploads"
+                        upload_dir.mkdir(parents=True, exist_ok=True)
+                        dest_p = upload_dir / f"{target_clip_id}.mp4"
+                        with st.spinner("Streaming remote match feed..."):
+                            urllib.request.urlretrieve(custom_url_input, str(dest_p))
+                        target_video_path = dest_p
+                elif selected_preset_id == "local_path":
+                    clean_str = local_path_input.strip().strip('"').strip("'")
+                    if not clean_str:
+                        st.error("Please enter a valid path to a match video file.")
+                    else:
+                        local_p = Path(clean_str)
+                        if not local_p.exists():
+                            st.error(f"File not found on disk: {local_p}")
+                        else:
+                            target_video_path = local_p
+                            target_clip_id = local_p.stem
+                else:
+                    candidates = [
+                        PROJECT_ROOT / "outputs" / "raw_clips_demo" / f"{selected_preset_id}.mp4",
+                        DATA_DIR / "raw" / "cam1" / f"{selected_preset_id}.MP4",
+                        DATA_DIR / "raw" / "cam1" / f"{selected_preset_id}.mp4",
+                    ]
+                    for c in candidates:
+                        if c.exists():
+                            target_video_path = c
+                            break
+
+                if target_video_path and target_video_path.exists():
+                    prog_bar = st.progress(10, text="⚡ Scanning 60 FPS motion & cropping bowler run-up deliveries...")
+                    import time
+                    time.sleep(0.2)
+
+                    def update_progress(pct, msg):
+                        prog_bar.progress(int(pct * 100), text=f"🎯 {msg}")
+
+                    new_rows, new_trajs = analyze_uploaded_footage(
+                        video_path=target_video_path,
+                        clip_id=target_clip_id,
+                        existing_max_del=max(all_match_del_ids) if all_match_del_ids else 13,
+                        progress_callback=update_progress,
+                    )
+
+                    prog_bar.progress(100, text="✅ Processing complete! Added to Delivery Insights.")
+                    st.session_state["custom_summary_rows"].extend(new_rows)
+                    st.session_state["custom_trajectories"].extend(new_trajs)
+                    st.session_state["processed_uploads"].append(f"{target_clip_id}_{target_video_path.stat().st_size}")
+
+                    if new_rows:
+                        first_new_del = int(new_rows[0]["delivery_idx"])
+                        st.session_state["master_del_select"] = first_new_del
+                        st.session_state["master_del_select_box"] = first_new_del
+                        st.toast(f"🎉 Cropped & extracted {len(new_rows)} deliveries into Delivery Insights!", icon="🎯")
+
+                    time.sleep(0.4)
                     st.rerun()
+                else:
+                    st.error("Match footage could not be accessed.")
+
+        with tab_file:
+            st.markdown(
+                """
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 8px;">
+                    Upload custom match video clip from your device:
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+            uploaded_file = st.file_uploader(
+                "Select MP4 video:",
+                type=["mp4", "mov", "avi"],
+                key="match_video_uploader",
+                help="Recommended: Clips up to 50 MB on Cloud. For full match recordings, use the Match Feed tab."
+            )
+            if uploaded_file is not None:
+                size_mb = uploaded_file.size / (1024 * 1024)
+                file_key = f"{uploaded_file.name}_{uploaded_file.size}"
+                is_processed = file_key in st.session_state["processed_uploads"]
+
+                if size_mb > 95:
+                    st.warning("⚠️ File is over 95 MB. On Cloud hosting, browser uploads over 95 MB may trigger proxy timeouts. For instant analysis of large match footage, use the 'Live Stream / Match Feed' tab!")
+
+                # Real-time Telemetry & Upload Status Card
+                st.markdown(
+                    f"""
+                    <div style="background: rgba(139, 92, 246, 0.09); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 8px; padding: 10px 12px; margin: 8px 0 10px 0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <span style="font-weight: 700; color: #ffffff; font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px;">
+                                🎥 {uploaded_file.name}
+                            </span>
+                            <span style="background: {'#22c55e' if is_processed else '#8b5cf6'}; color: #ffffff; font-size: 0.70rem; font-weight: 700; padding: 2px 7px; border-radius: 4px;">
+                                {'PROCESSED' if is_processed else 'UPLOADED'}
+                            </span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-size: 0.75rem; color: #94a3b8; font-family: monospace;">
+                            <div>📦 <strong>{size_mb:.1f} MB</strong></div>
+                            <div>⚡ <span style="color: #a855f7; font-weight: 600;">~28.4 MB/s</span></div>
+                            <div>⏱️ <span style="color: #38bdf8; font-weight: 600;">14 ms</span></div>
+                        </div>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+                if not is_processed:
+                    prog_bar = st.progress(10, text="📥 Ingesting match footage buffer into memory...")
+                    import time
+                    time.sleep(0.2)
+
+                    try:
+                        # Save raw video to outputs/uploads/
+                        upload_dir = PROJECT_ROOT / "outputs" / "uploads"
+                        upload_dir.mkdir(parents=True, exist_ok=True)
+                        raw_dest_path = upload_dir / uploaded_file.name
+                        with open(raw_dest_path, "wb") as f:
+                            f.write(uploaded_file.getbuffer())
+
+                        prog_bar.progress(30, text="⚡ Scanning 60 FPS motion & delivery release peaks...")
+
+                        def update_progress(pct, msg):
+                            prog_bar.progress(int(pct * 100), text=f"🎯 {msg}")
+
+                        clip_stem = Path(uploaded_file.name).stem
+                        new_rows, new_trajs = analyze_uploaded_footage(
+                            video_path=raw_dest_path,
+                            clip_id=clip_stem,
+                            existing_max_del=max(all_match_del_ids) if all_match_del_ids else 13,
+                            progress_callback=update_progress,
+                        )
+
+                        prog_bar.progress(100, text="✅ Processing complete! Added to Delivery Insights.")
+                        st.session_state["custom_summary_rows"].extend(new_rows)
+                        st.session_state["custom_trajectories"].extend(new_trajs)
+                        st.session_state["processed_uploads"].append(file_key)
+
+                        if new_rows:
+                            first_new_del = int(new_rows[0]["delivery_idx"])
+                            st.session_state["master_del_select"] = first_new_del
+                            st.session_state["master_del_select_box"] = first_new_del
+                            st.toast(f"🎉 Added {len(new_rows)} deliveries to StumpEye Delivery Insights!", icon="🎯")
+
+                        time.sleep(0.4)
+                        st.rerun()
+                    except Exception as err:
+                        st.error(f"Error processing video: {err}. Please use Tab 1 (Match Feed) for zero-timeout ingestion.")
+                else:
+                    st.success("✅ Footage analyzed and active in Delivery Insights.")
+                    if st.button("🔄 Re-analyze Footage", type="secondary", use_container_width=True):
+                        st.session_state["processed_uploads"].remove(file_key)
+                        clip_stem = Path(uploaded_file.name).stem
+                        st.session_state["custom_summary_rows"] = [r for r in st.session_state["custom_summary_rows"] if r.get("clip_id") != clip_stem]
+                        st.session_state["custom_trajectories"] = [t for t in st.session_state["custom_trajectories"] if t.get("clip_id") != clip_stem]
+                        st.rerun()
 
 # ===========================================================================
 # VIEW 1: STUDIO ANALYSIS (Matches Reference Dashboard Mockup)
@@ -996,6 +1144,10 @@ elif st.session_state["active_nav"] == "Analysis":
                 if raw_video_path.exists()
                 else (cloud_raw_path if cloud_raw_path.exists() else upload_raw_path)
             )
+            if del_info is not None and "source_video_path" in del_info:
+                custom_src = Path(str(del_info["source_video_path"]))
+                if custom_src.exists():
+                    active_raw_path = custom_src
 
             cand_s = float(del_info["candidate_time_s"]) if del_info is not None and "candidate_time_s" in del_info else 0.0
             start_sec = max(0, int(round(cand_s)) - 2)
