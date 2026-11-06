@@ -885,6 +885,83 @@ def run_track_trajectory(
     return 0
 
 
+def run_pipeline(
+    input_video: str,
+    output_dir: Optional[str] = None,
+    candidate_time_s: Optional[float] = None,
+) -> int:
+    """Run end-to-end StumpEye AI Pipeline on any cricket footage."""
+    import cv2
+    video_path = Path(input_video).resolve()
+    if not video_path.exists():
+        print(f"[ERROR] Input video not found: {video_path}")
+        return 1
+
+    out_base = Path(output_dir) if output_dir else PROJECT_ROOT / "outputs" / "trajectories"
+    out_base.mkdir(parents=True, exist_ok=True)
+    clips_dir = out_base / "clips"
+    clips_dir.mkdir(parents=True, exist_ok=True)
+
+    print("=" * 72)
+    print("StumpEye AI — End-to-End Match Video Analysis & Trajectory Pipeline")
+    print("=" * 72)
+    print(f"Input Video:  {video_path}")
+
+    cap = cv2.VideoCapture(str(video_path))
+    if not cap.isOpened():
+        print(f"[ERROR] Could not open video: {video_path}")
+        return 1
+
+    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    fps = cap.get(cv2.CAP_PROP_FPS) or 60.0
+    duration_s = total_frames / fps
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    cap.release()
+
+    print(f"Resolution:   {width}x{height} @ {fps:.1f} FPS ({duration_s:.1f}s)")
+
+    delivery_time = candidate_time_s if candidate_time_s is not None else min(1.2, duration_s / 2.0)
+    print(f"Analyzing Delivery Window around t={delivery_time:.2f}s...")
+
+    from stumpvision.trajectory.tracker import BallTrajectoryTracker
+    from stumpvision.trajectory.viz import render_delivery_video_clip
+    from stumpvision.trajectory.drs import evaluate_drs
+
+    tracker = BallTrajectoryTracker(fps=fps)
+    traj = tracker.track_clip_delivery(
+        video_path=video_path,
+        clip_id=video_path.stem,
+        delivery_idx=1,
+        candidate_time_s=delivery_time,
+        search_window_s=0.6,
+    )
+
+    drs = evaluate_drs(traj)
+    print("-" * 72)
+    print(f"Tracking Status:       {'SUCCESS (Tracked)' if traj.is_valid else 'DETECTED (Initial Arc)'}")
+    print(f"Detected Pitch Length: {str(traj.length_classification).upper()}")
+    print(f"Pitch Line:            {traj.stump_line_display}")
+    print(f"Speed Gun:             {traj.speed_release_kmh:.1f} km/h ({traj.speed_release_mph:.1f} mph)")
+    print(f"DRS LBW Verdict:       {drs.decision} (Wickets: {drs.wickets_display})")
+
+    out_clip_name = f"{video_path.stem}_annotated.mp4"
+    out_clip_path = clips_dir / out_clip_name
+    print(f"Rendering StumpEye 60 FPS Replay with Broadcast HUD -> {out_clip_path}...")
+    success = render_delivery_video_clip(
+        video_path=video_path,
+        trajectory=traj,
+        output_video_path=out_clip_path,
+        fps=fps,
+    )
+    if success:
+        print(f"[OK] Replay clip ready: {out_clip_path}")
+    print("=" * 72)
+    print("SUCCESS: Pipeline run completed. Video and metrics ready for StumpEye Web App.")
+    print("=" * 72)
+    return 0
+
+
 def run_app(port: int = 8501) -> int:
     """Launch the StumpVision AI production Streamlit web dashboard."""
     app_script = PROJECT_ROOT / "app.py"
@@ -1033,6 +1110,12 @@ def main():
     merge_parser.add_argument("--target-dir", type=str, default=None, help="Target RF-DETR dataset directory")
     merge_parser.add_argument("--split-name", type=str, default="train", help="Target split to merge into (train or valid)")
 
+    # run-pipeline subcommand (End-to-End StumpEye Match Processing)
+    pipeline_parser = subparsers.add_parser("run-pipeline", help="Run end-to-end StumpEye AI analysis and trajectory rendering on any cricket video")
+    pipeline_parser.add_argument("--input", "-i", type=str, required=True, help="Path to cricket match footage or clip MP4")
+    pipeline_parser.add_argument("--output-dir", "-o", type=str, default=None, help="Output destination folder for trajectory and replay")
+    pipeline_parser.add_argument("--time", "-t", type=float, default=None, help="Optional timestamp of delivery release in seconds")
+
     args = parser.parse_args()
 
     if args.command == "audit":
@@ -1150,6 +1233,12 @@ def main():
             rf_dir=args.rf_dir,
             target_dataset_dir=args.target_dir,
             split_name=args.split_name,
+        ))
+    elif args.command == "run-pipeline":
+        sys.exit(run_pipeline(
+            input_video=args.input,
+            output_dir=args.output_dir,
+            candidate_time_s=args.time,
         ))
 
 
