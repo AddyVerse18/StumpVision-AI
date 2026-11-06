@@ -11,6 +11,7 @@ Multimodal Computer Vision Engine:
 
 import sys
 import os
+os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "-8"
 import base64
 from pathlib import Path
 
@@ -23,6 +24,10 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 import json
 import cv2
+try:
+    cv2.utils.logging.setLogLevel(cv2.utils.logging.LOG_LEVEL_ERROR)
+except Exception:
+    pass
 import numpy as np
 import pandas as pd
 import altair as alt
@@ -958,8 +963,8 @@ with head_col_right:
                 file_key = f"{uploaded_file.name}_{uploaded_file.size}"
                 is_processed = file_key in st.session_state["processed_uploads"]
 
-                if size_mb > 95:
-                    st.warning("⚠️ File is over 95 MB. On Cloud hosting, browser uploads over 95 MB may trigger proxy timeouts. For instant analysis of large match footage, use the 'Live Stream / Match Feed' tab!")
+                if not is_processed and size_mb > 95:
+                    st.info("💡 Note for Cloud: Files over 95 MB can also be ingested with zero upload delay via the 'Live Stream / Match Feed' tab.")
 
                 # Real-time Telemetry & Upload Status Card
                 st.markdown(
